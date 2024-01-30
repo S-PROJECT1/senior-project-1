@@ -1,10 +1,15 @@
 const express = require('express');
 const app = express();
 const cors = require("cors");
-const PORT = 8080;
-const route1 = require("../routes/user.js");
-const route2 = require("../routes/handmade.js");
-const route3 = require("../routes/handywork.js");
+const PORT = 8080
+const db = require("../database/index.js")
+const route1 = require("../routes/user.js")
+const route2 = require("../routes/handmade.js")
+const route3 = require("../routes/handywork.js")
+
+
+
+
 
 app.use(cors());
 app.use(express.json());

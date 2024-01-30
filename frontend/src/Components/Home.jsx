@@ -9,7 +9,7 @@ const Home = () => {
       <Navbar />
       <Handiwork />
       <HandMade />
-      <Search/>
+      <Search />
     </div>
   );
 };
