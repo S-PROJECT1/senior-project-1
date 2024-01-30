@@ -1,7 +1,10 @@
+// App.js
+
 import './App.css';
 import React, { useState } from 'react';
 import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
+import Navbar from './Components/Navbar.jsx';
 import { FaTools, FaHandPaper } from 'react-icons/fa';
 
 function App() {
@@ -19,6 +22,7 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
         <div className="katha" onClick={toggleMenu}>
           ☰

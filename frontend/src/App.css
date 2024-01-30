@@ -4,25 +4,9 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
-.nav {
-  background-color: #2c3e50;
-  /* Dark blue background color for the navbar */
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Add a subtle shadow */
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-  /* Set a higher z-index to appear on top */
-}
-
 .katha {
   position: relative;
-  left: 107px;
+  left: 140px;
   bottom: 14px;
   cursor: pointer;
 }
