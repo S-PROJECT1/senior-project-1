@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import AddHandMade from "./AddHandMade";
 function HandMade() {
   const [handmades, setHandmades] = useState([])
 
@@ -13,10 +13,14 @@ function HandMade() {
         console.error('Error fetching data:', error)
       })
   }, [])
+  const handleAddHandmade = (newHandmade) => {
+    setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
+  }
 
   return (
     <div>
       <h1>HandMade Component</h1>
+      <AddHandMade onAddHandmade={handleAddHandmade} />
       {handmades.map(handmade => (
         <div key={handmade.id}>
           <p>{handmade.title}</p>
