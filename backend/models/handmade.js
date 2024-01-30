@@ -12,5 +12,13 @@ module.exports = {
             connection.query(query,(err,results)=>{
                   callback(err,results)
             })
+      },
+      addOne:(handmade,callback) => {
+            const sql='insert into `handmade` set img=?,title=?,description=?,video=?'
+            let values=[handmade.img,handmade.title,handmade.description,handmade.video]
+            connection.query(sql, values, (err, results) => {
+                  callback(err, results)
+            })
       }
+
 }
