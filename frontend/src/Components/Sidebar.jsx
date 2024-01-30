@@ -2,7 +2,7 @@ import React from "react";
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
-
+import Navbar from '../css/Navbar.css'
 export const Sidebar = [
     {
         title: 'Home',
@@ -12,41 +12,23 @@ export const Sidebar = [
       },
       {
         title:'Hand Maid',
-        path:'/Hand Maid',
+        path:'/HandMaid',
         cName:'nav-text'
       },
       {
         title:'Handi Work',
-        path:'/Handi Work',
+        path:'/HandiWork',
         cName:'nav-text'
       },
       {
-        title: 'Reports',
-        path: '/reports',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'nav-text'
-      },
-      {
-        title: 'Products',
-        path: '/products',
-        icon: <FaIcons.FaCartPlus />,
-        cName: 'nav-text'
-      },
-      {
-        title: 'Team',
-        path: '/team',
-        icon: <IoIcons.IoMdPeople />,
-        cName: 'nav-text'
-      },
-      {
-        title: 'Messages',
-        path: '/messages',
+        title: 'Contact US',
+        path: '/ContactUs',
         icon: <FaIcons.FaEnvelopeOpenText />,
         cName: 'nav-text'
       },
       {
-        title: 'Supports',
-        path: '/support',
+        title: 'About US',
+        path: '/AboutUS',
         icon: <IoIcons.IoMdHelpCircle />,
         cName: 'nav-text'
       },
