@@ -5,54 +5,75 @@ body {
 }
 
 .nav {
-  background-color: #2c3e50; /* Dark blue background color for the navbar */
+  background-color: #2c3e50;
+  /* Dark blue background color for the navbar */
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add a subtle shadow */
   position: fixed;
   width: 100%;
-  z-index: 2; /* Set a higher z-index to appear on top */
+  z-index: 2;
+  /* Set a higher z-index to appear on top */
+}
+
+.katha {
+  position: relative;
+  left: 107px;
+  bottom: 14px;
+  cursor: pointer;
 }
 
 .nav:hover {
-  background-color: #34495e; /* Darker blue on hover */
+  background-color: #34495e;
+  /* Darker blue on hover */
 }
 
 .items {
   cursor: pointer;
-  margin: 0 10px;
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  margin: 10px 0;
+  transition: color 0.3s ease;
   display: flex;
+  align-items: center;
+  /* Align items vertically in the middle */
 }
 
+
 .items:hover {
-  color: #3498db; /* Blue color on hover */
+  color: #3498db;
   text-decoration: underline;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  /* Add a subtle box-shadow on hover */
+  border-radius: 4px;
+  /* Add border-radius on hover */
 }
 
 .sidebar {
-  background: #34495e; /* Darker blue background color for the sidebar */
-  width: 200px;
+  background: #34495e;
+  width: 141px;
   padding: 20px;
   color: white;
   height: 100vh;
   position: fixed;
-  top: 0;
-  left: -200px;
-  transition: left 0.3s ease; /* Smooth transition when opening/closing */
-  z-index: 1; /* Set a lower z-index to appear below the navbar */
+  top: 0px;
+  left: -149px;
+  transition: left 0.3s ease;
+  z-index: 1;
 }
-
 .sidebar:hover {
   left: 0;
+  background: #2c3e50;
+  /* Change background color on hover */
 }
 
 .icon {
-  margin-right: 8px;
+  margin-right: 6px;
+  /* Adjust the margin for icon spacing */
 }
+
 
 
 .container:hover {

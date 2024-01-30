@@ -19,5 +19,16 @@ module.exports = {
                         res.json(handworks)
                   }
             })
+      },
+      addNewHandWork:(req,res) =>{
+            var newHandWork=req.body
+            model.addHandWork(newHandWork,(err,results)=>{
+                  if (err) {
+                        res.status(500).send("Error adding all handworks from the database: ",err)
+                  } else {
+                        res.json(results)
+                  }
+
+            })
       }
 };

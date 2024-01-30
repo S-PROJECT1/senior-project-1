@@ -19,11 +19,10 @@ function App() {
 
   return (
     <div>
-      {/* <div className="nav" onClick={toggleMenu}>
-        ☰
-      </div> */}
-
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
+        <div className="katha" onClick={toggleMenu}>
+          ☰
+        </div>
         <span className="items" onClick={() => switchView('Handiwork')}>
           <FaTools className="icon" /> Handiwork
         </span>

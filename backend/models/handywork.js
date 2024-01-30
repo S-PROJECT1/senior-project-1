@@ -14,5 +14,10 @@ module.exports = {
             connection.query(query,(err,results)=>{
                   callback(err,results)
             })
+      },
+      addHandWork:(newHandWork,callback)=>{
+            const sql = "INSERT INTO ``handwork`SET image=?,title=?,desc=?,videos=?"
+            connection.query(sql, [newHandWork.image,newHandWork.title,newHandWork.desc,newHandWork.videos])
+            callback(err, results)
       }
 }

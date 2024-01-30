@@ -20,5 +20,17 @@ module.exports = {
                         res.json(handmades)
                   }
             })
+      },
+      addOneHandMade:(req,res)=> {
+            var handmade = req.body
+            model.addOne(handmade,(err,results)=>{
+                  if (err){
+                        res.status(500).send("Error GETTING all handmades from the database: ",err)
+                  }
+                  else{
+                        res.json(results)
+                  }
+            })
+            
       }
 };

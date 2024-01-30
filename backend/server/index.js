@@ -6,7 +6,7 @@ const db = require("../database/index.js")
 const route1 = require("../routes/user.js")
 const route2 = require("../routes/handmade.js")
 const route3 = require("../routes/handywork.js")
-
+// const searchRoutes = require('../routes/search.js')
 
 
 
@@ -16,6 +16,7 @@ app.use(express.json())
 app.use("/user", route1)
 app.use("/handmade", route2)
 app.use("/handywork", route3)
+// app.use('/search', searchRoutes)
 
 
 
