@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import '../App.css'
+import AddHandWork from './AddHandWork';
 
 function Handiwork() {
   const [handworkData, setHandworkData] = useState([])
@@ -16,9 +17,13 @@ function Handiwork() {
         console.error('Error fetching data:', error)
       })
   }, [])
-
+  const handleAddHandWork = (newHandWork) => {
+    // Update the state with the new handwork
+    setHandworkData((prevHandworkData) => [...prevHandworkData, newHandWork]);
+  }
   return (
     <div className="cards-container">
+            <AddHandWork onAddHandWork={handleAddHandWork} />
       {handworkData.map(handwork => (
         <div key={handwork.id_Work} className="card">
           <img src={handwork.image} alt="Handiwork" />
