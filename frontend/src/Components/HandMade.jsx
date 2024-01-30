@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import AddHandMade from "./AddHandMade";
 function HandMade() {
   const [handmades, setHandmades] = useState([])
 
@@ -13,9 +13,13 @@ function HandMade() {
         console.error('Error fetching data:', error)
       })
   }, [])
+  const handleAddHandmade = (newHandmade) => {
+    setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
+  }
 
   return (
     <div className="cards-container">
+      <AddHandMade onAddHandmade={handleAddHandmade} />
       {handmades.map(handmade => (
         <div className="card" key={handmade.id}>
           <img src={handmades.image} alt="handwork" />

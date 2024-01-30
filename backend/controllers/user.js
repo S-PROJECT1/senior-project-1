@@ -1,12 +1,6 @@
 const model = require("../models/user");
 
 
-
-
-
-
-
-
 module.exports = {
       add: (req, res) => {
             let newUser = req.body
