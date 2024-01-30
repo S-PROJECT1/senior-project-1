@@ -8,5 +8,11 @@ module.exports = {
             connection.query(sql, [id], (err, results) => {
                   callback(err, results)
             })
+      },
+      getAllData: (callback)=>{
+            const query = "SELECT * FROM handwork"
+            connection.query(query,(err,results)=>{
+                  callback(err,results)
+            })
       }
 }
