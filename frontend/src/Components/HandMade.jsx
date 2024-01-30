@@ -15,12 +15,13 @@ function HandMade() {
   }, [])
 
   return (
-    <div>
-      <h1>HandMade Component</h1>
+    <div className="cards-container">
       {handmades.map(handmade => (
-        <div key={handmade.id}>
-          <p>{handmade.title}</p>
-          <p>{handmade.description}</p>
+        <div className="card" key={handmade.id}>
+          <img src={handmades.image} alt="handwork" />
+          <div className="card-title">{handmade.title}</div>
+          <div className="card-description">{handmade.description}</div>
+          <button className="card-button">See more details</button>
         </div>
       ))}
     </div>

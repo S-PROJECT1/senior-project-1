@@ -1,17 +1,12 @@
-// App.js
-import React, { useState } from 'react';
 import './App.css';
-import axios from 'axios';
+import React, { useState } from 'react';
+import Handiwork from './Components/HandiWork.jsx';
+import HandMade from './Components/HandMade.jsx';
+import { FaTools, FaHandPaper } from 'react-icons/fa';
 
-const App = () => {
+function App() {
   const [menuView, setMenuView] = useState(false);
   const [view, setView] = useState('Products');
-  const [product, setProduct] = useState({});
-
-
-
-  const [data, setData] = useState([]);
-
 
   const toggleMenu = () => {
     setMenuView(!menuView);
@@ -19,48 +14,30 @@ const App = () => {
 
   const switchView = (option) => {
     setView(option);
+    setMenuView(false); // Close the sidebar when switching views
   };
-
-
-  const DELETE = (id) => {
-    axios
-      .delete(`http://localhost:9999/DELETE/${id}`)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
-
-
-
 
   return (
     <div>
-      <div className="nav">
-        <span className="logo" onClick={() => switchView('Products')}>
-          <img className='logoo' src={Logo} alt="Logo" />
-        </span>
-        {view === 'Products' && <Search onSearch={handleSearch} />}
-        {view === 'Cart' && <Search onSearch={handleSearch} />}
-        {view === 'OneProduct' && <Search onSearch={handleSearch} />}
-        {view === 'Add' && <Search onSearch={handleSearch} />}
+      {/* <div className="nav" onClick={toggleMenu}>
+        ☰
+      </div> */}
 
-        <span className="items" onClick={() => switchView('Cart')}>
-          🛒 Your Cart
+      <div className={`sidebar ${menuView ? 'active' : ''}`}>
+        <span className="items" onClick={() => switchView('Handiwork')}>
+          <FaTools className="icon" /> Handiwork
         </span>
-        <span className="items" onClick={() => switchView('Add')}>
-          🔻 Add A Book
+        <span className="items" onClick={() => switchView('HandMade')}>
+          <FaHandPaper className="icon" /> HandMade
         </span>
       </div>
 
-      {view === 'Products' && <Products setView={setProduct} switchView={switchView} />}
-      {view === 'Add' && <Add />}
-      {view === 'OneProduct' && <OneProduct product={product} DELETE={DELETE} addToCart={addToCart} />}
-      {view === 'Cart' && <Cart cartItems={cartItems} removeFromCart={removeFromCart} pay={pay} clearCart={clearCart} />}
+      <div className={`container ${menuView ? 'active' : ''}`}>
+        {view === 'Handiwork' && <Handiwork />}
+        {view === 'HandMade' && <HandMade />}
+      </div>
     </div>
   );
-};
+}
 
 export default App;
