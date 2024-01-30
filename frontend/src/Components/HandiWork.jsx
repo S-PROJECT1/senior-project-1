@@ -1,22 +1,36 @@
-import React from 'react';
-import { useEffect , useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+// Handiwork.jsx
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
+import '../App.css'
 
 function Handiwork() {
+  const [handworkData, setHandworkData] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/handywork/GETALL')
+      .then(response => {
+        setHandworkData(response.data)
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error)
+      })
+  }, [])
+
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">See more details</Button>
-      </Card.Body>
-    </Card>
+    <div className="cards-container">
+      {handworkData.map(handwork => (
+        <div key={handwork.id_Work} className="card">
+          <img src={handwork.image} alt="Handiwork" />
+          <div>
+            <div className="card-title">{handwork.title}</div>
+            <div className="card-description">{handwork.desc}</div>
+            <button className="card-button">See more details</button>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
 
-export default HandiWork;
+export default Handiwork;
