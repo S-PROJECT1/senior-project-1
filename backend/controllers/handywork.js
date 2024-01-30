@@ -12,11 +12,11 @@ module.exports = {
             });
       },
       getAllHandWorks: (req,res) => {
-            model.getAllData((err,handmades)=>{
+            model.getAllData((err,handworks)=>{
                   if (err) {
                         res.status(500).send("Error GETTING all handworks from the database: ",err)
                   } else {
-                        res.json(handmades)
+                        res.json(handworks)
                   }
             })
       }
