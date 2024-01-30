@@ -4,7 +4,7 @@ const routes = express.Router()
 
 
 
-routes.get("/handmades",controller.getAllHandMades)
+routes.get("/GETALL",controller.getAllHandMades)
 routes.delete("/DELETE/:id", controller.DELETE)
 
 module.exports = routes;
