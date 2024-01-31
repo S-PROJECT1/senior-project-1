@@ -4,7 +4,6 @@ import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
 import Navbar from './Components/Navbar.jsx';
 import { FaTools, FaHandPaper } from 'react-icons/fa';
-import { FaTools, FaHandPaper, } from 'react-icons/fa';
 import { AiFillHome, AiFillPhone, AiFillPlusCircle } from "react-icons/ai";
 
 function App() {
