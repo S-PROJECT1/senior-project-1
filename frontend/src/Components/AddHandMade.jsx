@@ -9,6 +9,8 @@ function AddHandMade({ onAddHandmade }) {
     video: '',
   });
 
+  const [showModal, setShowModal] = useState(false);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -31,36 +33,56 @@ function AddHandMade({ onAddHandmade }) {
           description: '',
           video: '',
         });
+        // Close the modal after submission
+        setShowModal(false);
       })
       .catch(error => {
         console.error('Error adding handmade:', error);
       });
   };
 
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Image URL:
-        <input type="text" name="img" value={formData.img} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Title:
-        <input type="text" name="title" value={formData.title} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Description:
-        <input type="text" name="description" value={formData.description} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Video URL:
-        <input type="text" name="video" value={formData.video} onChange={handleInputChange} />
-      </label>
-      <br />
-      <button type="submit">Add Handmade</button>
-    </form>
+    <div>
+      <button onClick={handleOpenModal}>Add Handmade</button>
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={handleCloseModal}>&times;</span>
+            <form onSubmit={handleSubmit}>
+              <label>
+                Image URL:
+                <input type="text" name="img" value={formData.img} onChange={handleInputChange} />
+              </label>
+              <br />
+              <label>
+                Title:
+                <input type="text" name="title" value={formData.title} onChange={handleInputChange} />
+              </label>
+              <br />
+              <label>
+                Description:
+                <input type="text" name="description" value={formData.description} onChange={handleInputChange} />
+              </label>
+              <br />
+              <label>
+                Video URL:
+                <input type="text" name="video" value={formData.video} onChange={handleInputChange} />
+              </label>
+              <br />
+              <button type="submit">Add Handmade</button>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
