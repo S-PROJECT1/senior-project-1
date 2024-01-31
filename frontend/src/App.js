@@ -13,7 +13,10 @@ import { AiFillHome, AiFillPhone, AiFillPlusCircle } from "react-icons/ai";
 
 function App() {
   const [menuView, setMenuView] = useState(false);
-  const [view, setView] = useState('Home');
+  const [view, setView] = useState('Register');
+  const [curr, setcurr] = useState("login");
+
+
 
   const toggleMenu = () => {
     setMenuView(!menuView);
@@ -47,13 +50,20 @@ function App() {
         <span className="items" onClick={() => switchView('Contact')}>
           <AiFillPlusCircle className="icon" /> Contact
         </span>
+        <span className="items" onClick={() => switchView('Login')}>
+          <AiFillPlusCircle className="icon" /> Login
+        </span>
       </div>
-
       <div className={`container ${menuView ? 'active' : ''}`}>
         {/* <Slider /> */}
+
+
+
         {view === 'Handiwork' && <Handiwork />}
         {view === 'HandMade' && <HandMade />}
         {view === 'Home' && <Home />}
+        {view === 'Login' && <Login switchView={switchView} />}
+        {view === 'Register' && <Register switchView={switchView} />}
 
 
       </div>
