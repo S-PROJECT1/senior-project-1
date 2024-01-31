@@ -21,11 +21,13 @@ function HandMade() {
     <div className="cards-container">
       <AddHandMade onAddHandmade={handleAddHandmade} />
       {handmades.map(handmade => (
-        <div className="card" key={handmade.id}>
-          <img src={handmades.image} alt="handwork" />
-          <div className="card-title">{handmade.title}</div>
-          <div className="card-description">{handmade.description}</div>
-          <button className="card-button">See more details</button>
+        <div key={handmade.id} className="card">
+          <img src={handmade.img} alt="Handiwork" />
+          <div>
+            <div className="card-title">{handmade.title}</div>
+            <div className="card-description">{handmade.description}</div>
+            <button className="card-button">See more details</button>
+          </div>
         </div>
       ))}
     </div>
