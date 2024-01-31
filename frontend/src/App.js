@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
 import Navbar from './Components/Navbar.jsx';
-import Slider from './Components/Slider.jsx';
 import Home from './Components/Home.jsx';
 
 
@@ -24,9 +23,7 @@ function App() {
 
   return (
     <div>
-
       <Navbar />
-      
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
         <div className="katha" onClick={toggleMenu}>
           ☰
