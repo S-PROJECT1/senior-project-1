@@ -6,6 +6,7 @@ import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
 import Navbar from './Components/Navbar.jsx';
 import { FaTools, FaHandPaper } from 'react-icons/fa';
+import Footer from './Components/footer.jsx';
 
 function App() {
   const [menuView, setMenuView] = useState(false);
@@ -39,6 +40,7 @@ function App() {
         {view === 'Handiwork' && <Handiwork />}
         {view === 'HandMade' && <HandMade />}
       </div>
+      <Footer />
     </div>
   );
 }
