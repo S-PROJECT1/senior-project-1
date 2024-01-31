@@ -6,13 +6,13 @@ import Search from './Search'
 import Slider from './Slider.jsx';
 const Home = () => {
   return (
-    <div>
+    <div className='home'>
       {/* <Navbar /> */}
       {/* <Slider /> */}
       {/* <Handiwork /> */}
       {/* <HandMade /> */}
       {/* <Search /> */}
-      heloo
+      <p className='work'>Work In Progress</p>
     </div>
   );
 };
