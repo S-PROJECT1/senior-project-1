@@ -2,6 +2,7 @@
 
 import React from 'react';
 import './Navbar.css';
+import SearchComponent from './SearchComponent'
 
 const Navbar = () => {
   return (
@@ -12,6 +13,7 @@ const Navbar = () => {
         <li>About</li>
         <li>Contact</li>
       </ul>
+      <div className='a'><SearchComponent /></div>
     </nav>
   );
 };

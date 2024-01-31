@@ -2,14 +2,14 @@ import React from 'react';
 import Navbar from './Navbar';
 import Handiwork from './HandiWork.jsx';
 import HandMade from './HandMade.jsx';
-import Search from './Search'
+import SearchComponent from './SearchComponent';
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Handiwork />
       <HandMade />
-      <Search />
+      <SearchComponent />
     </div>
   );
 };
