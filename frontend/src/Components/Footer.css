@@ -1,0 +1,15 @@
+.footer-copyright hr{
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    height: 3px;
+    background: #c7c7c7;
+}
+.footer{
+    margin-top: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}

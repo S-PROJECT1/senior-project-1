@@ -2,12 +2,11 @@ import React from 'react';
 import Navbar from './Navbar';
 import Handiwork from './HandiWork.jsx';
 import HandMade from './HandMade.jsx';
-import { Footer } from 'react-bootstrap/lib/Modal';
+import  Footer  from './Footer';
 
 const Home = () => {
   return (
     <div>
-      <h1>helolo</h1>
       <Navbar />
       <Handiwork />
       <HandMade />
