@@ -2,15 +2,14 @@ import React from 'react';
 import Navbar from './Navbar';
 import Handiwork from './HandiWork.jsx';
 import HandMade from './HandMade.jsx';
-import  Footer  from './Footer';
-
+import Search from './Search'
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Handiwork />
       <HandMade />
-      <Footer/>
+      <Search />
     </div>
   );
 };
