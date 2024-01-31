@@ -5,6 +5,7 @@
     "mysql2": "^3.9.1",
     "react-bootstrap": "^2.10.0",
     "react-icons": "^5.0.1",
+    "react-responsive-carousel": "^3.2.23",
     "react-sidebar": "^3.0.2"
   }
 }
