@@ -1,40 +1,40 @@
-import React, { useState } from 'react';
-import { Carousel } from 'react-bootstrap';
 
-const Slider = () => {
-      const [index, setIndex] = useState(0)
-      const handleSelect = (selectedIndex) => {
-            setIndex(selectedIndex)
-      }
-      return (
-            <Carousel activeIndex={index} onSelect={handleSelect}>
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '../css/App.css';
 
-                  <Carousel.Item className="slider-background2" interval={2000}>
-                        <div className="d-flex flex-row justify-content-center align-items-center">
-                              <img
-                                    style={{ height: "600px", width: "99%" }}
-                                    className=""
-                                    src="https://media.wired.com/photos/612e57f96b5b362697c4bf0b/master/pass/Games-The_Witcher_3_Wild_Hunt_They_messed_with_the_wrong_person_RGB.jpg"
-                                    alt="First slide"
-                              />
+const CarouselImages = [
+  'https://www.rukita.co/stories/wp-content/uploads/2021/05/diy-home-decor.jpeg',
+  'https://www.photojaanic.com/blog/wp-content/uploads/sites/2/2020/04/DIY-Home-Decor-Ideas-1080x720.jpeg', // Replace with your second image URL
+  'https://d39l2hkdp2esp1.cloudfront.net/img/photo/180218/180218_00_2x.jpg?20190815010553',  // Replace with your third image URL
+];
 
-                        </div>
-                  </Carousel.Item>
+const SliderComponent = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000, 
+  };
 
-                  <Carousel.Item className="slider-background3" interval={2000}>
-                        <div className="d-flex flex-row justify-content-center align-items-center">
-                              <img
-                                    style={{ height: "600px", width: "99%" }}
-                                    className=""
-                                    src="https://images7.alphacoders.com/132/1323379.png"
-                                    alt="First slide"
-                              />
-
-                        </div>
-                  </Carousel.Item>
-
-            </Carousel>
-      );
+  return (
+    <div className="slider">
+      <Slider {...settings}>
+        {CarouselImages.map((image, index) => (
+          <div key={index}>
+            <img src={image} alt={`Slide ${index + 1}`}  />
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
 };
 
-export default Slider;
+export default SliderComponent;
+
+
+
