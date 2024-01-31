@@ -4,6 +4,8 @@ import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
 import Navbar from './Components/Navbar.jsx';
 import Home from './Components/Home.jsx';
+import Register from './Components/Register.jsx';
+import Login from './Components/login.jsx';
 
 
 import { FaTools, FaHandPaper, } from 'react-icons/fa';
