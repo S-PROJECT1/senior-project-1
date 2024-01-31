@@ -18,13 +18,16 @@ function HandMade() {
   }
 
   return (
-    <div>
-      <h1>HandMade Component</h1>
+    <div className="cards-container">
       <AddHandMade onAddHandmade={handleAddHandmade} />
       {handmades.map(handmade => (
-        <div key={handmade.id}>
-          <p>{handmade.title}</p>
-          <p>{handmade.description}</p>
+        <div key={handmade.id} className="card">
+          <img src={handmade.img} alt="Handiwork" />
+          <div>
+            <div className="card-title">{handmade.title}</div>
+            <div className="card-description">{handmade.description}</div>
+            <button className="card-button">See more details</button>
+          </div>
         </div>
       ))}
     </div>
