@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: 'Arial', sans-serif;
 }
-
+/* side-bar ----------------------------------- */
 .katha {
   position: relative;
   left: 140px;
@@ -76,7 +76,7 @@ body {
 
 
 
-/* side----------------------------------- */
+/* diffrent-cards ----------------------------------- */
 
 .cards-container {
   display: flex;
@@ -130,4 +130,10 @@ body {
 
 .card-button:hover {
   background-color: #45a049;
+}
+/* Home-i-Think */
+.work{
+  position: relative;
+  left: 500px;
+  font-size: bold;
 }

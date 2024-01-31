@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar switchView={switchView}/>
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
         <div className="katha" onClick={toggleMenu}>
           ☰
@@ -40,7 +40,7 @@ function App() {
       </div>
 
       <div className={`container ${menuView ? 'active' : ''}`}>
-      {/* <Slider /> */}
+        {/* <Slider /> */}
         {view === 'Handiwork' && <Handiwork />}
         {view === 'HandMade' && <HandMade />}
         {view === 'Home' && <Home />}
