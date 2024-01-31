@@ -1,23 +1,30 @@
-import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
-import Navbar from './Components/Navbar.jsx';
-import Home from './Components/Home.jsx';
+import Navbar from './Components/Navbar';
+import Slider from './Components/Slider.jsx';
+import { FaTools, FaHandPaper } from 'react-icons/fa';
+import { AiFillHome, AiFillPhone, AiFillPlusCircle } from 'react-icons/ai';
+import '../src/css/App.css';
 import Register from './Components/Register.jsx';
 import Login from './Components/login.jsx';
+// import { AuthContext, AuthProvider } from './context/AuthContext.js';
 
-
-import { FaTools, FaHandPaper, } from 'react-icons/fa';
-import { AiFillHome, AiFillPhone, AiFillPlusCircle } from "react-icons/ai";
 
 function App() {
   const [menuView, setMenuView] = useState(false);
   const [view, setView] = useState('Register');
-  const [curr, setcurr] = useState("login");
+  // const [curr, setcurr] = useState("login");
 
+  // const { isLoading, userToken } = useContext(AuthContext)
 
-
+  // if (isLoading) {
+  //   return (
+  //     <div>
+  //       Loading...
+  //     </div>
+  //   );
+  // }
   const toggleMenu = () => {
     setMenuView(!menuView);
   };
@@ -29,7 +36,21 @@ function App() {
 
   return (
     <div>
-      <Navbar switchView={switchView} />
+
+
+      {/* {userToken !== null ? <Slider /> : <Login />} */}
+
+
+
+
+
+
+
+
+      <Navbar />
+      {/* Conditionally render the Slider component only for the Home view */}
+      {view === 'Home' && <Slider />}
+
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
         <div className="katha" onClick={toggleMenu}>
           ☰
@@ -43,7 +64,6 @@ function App() {
         <span className="items" onClick={() => switchView('HandMade')}>
           <FaHandPaper className="icon" /> HandMade
         </span>
-
         <span className="items" onClick={() => switchView('About')}>
           <AiFillPhone className="icon" /> About
         </span>
@@ -55,13 +75,12 @@ function App() {
         </span>
       </div>
       <div className={`container ${menuView ? 'active' : ''}`}>
-        {/* <Slider /> */}
 
 
 
         {view === 'Handiwork' && <Handiwork />}
         {view === 'HandMade' && <HandMade />}
-        {view === 'Home' && <Home />}
+        {/* {view === 'Home' && <Home />} */}
         {view === 'Login' && <Login switchView={switchView} />}
         {view === 'Register' && <Register switchView={switchView} />}
 
@@ -72,3 +91,7 @@ function App() {
 }
 
 export default App;
+
+
+
+
