@@ -1,17 +1,13 @@
-import React from 'react';
-import './Navbar.css';
-import SearchComponent from './SearchComponent'
 
-const Navbar = (props) => {
+import '../css/Navbar.css';
+
+const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="logo">Your Logo</div>
+      <div className="logo">Your  Logo</div>
       <ul className="nav-links">
-        {/* <li onClick={() => props.switchView('Home')}>Home</li>
-        <li onClick={() => props.switchView('About')}>About</li>
-        <li onClick={() => props.switchView('Contact')}>Contact</li> */}
+        {/* Add any navigation links if needed */}
       </ul>
-      <div className='a'><SearchComponent /></div>
     </nav>
   );
 };
