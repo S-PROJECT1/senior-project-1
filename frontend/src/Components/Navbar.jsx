@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import SearchComponent from './SearchComponent'
 
 const Navbar = (props) => {
   return (
@@ -10,6 +11,7 @@ const Navbar = (props) => {
         <li onClick={() => props.switchView('About')}>About</li>
         <li onClick={() => props.switchView('Contact')}>Contact</li> */}
       </ul>
+      <div className='a'><SearchComponent /></div>
     </nav>
   );
 };
