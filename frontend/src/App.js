@@ -6,7 +6,8 @@ import Navbar from './Components/Navbar.jsx';
 import Home from './Components/Home.jsx';
 
 
-import { FaTools, FaHandPaper } from 'react-icons/fa';
+import { FaTools, FaHandPaper,} from 'react-icons/fa';
+import {  AiFillHome, AiFillPhone, AiFillPlusCircle  } from "react-icons/ai";
 
 function App() {
   const [menuView, setMenuView] = useState(false);
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <Navbar switchView={switchView}/>
+      <Navbar switchView={switchView} />
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
         <div className="katha" onClick={toggleMenu}>
           ☰
@@ -35,7 +36,13 @@ function App() {
           <FaHandPaper className="icon" /> HandMade
         </span>
         <span className="items" onClick={() => switchView('Home')}>
-          <FaHandPaper className="icon" /> Home
+          <AiFillHome className="icon" /> Home
+        </span>
+        <span className="items" onClick={() => switchView('About')}>
+          <AiFillPhone className="icon" /> About
+        </span>
+        <span className="items" onClick={() => switchView('Contact')}>
+          <AiFillPlusCircle className="icon" /> Contact
         </span>
       </div>
 
