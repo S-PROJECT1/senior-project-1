@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
 import Navbar from './Components/Navbar.jsx';
-import Home from './Components/Home.jsx';
-
-
+import { FaTools, FaHandPaper } from 'react-icons/fa';
 import { FaTools, FaHandPaper, } from 'react-icons/fa';
 import { AiFillHome, AiFillPhone, AiFillPlusCircle } from "react-icons/ai";
 
@@ -51,8 +49,6 @@ function App() {
         {/* <Slider /> */}
         {view === 'Handiwork' && <Handiwork />}
         {view === 'HandMade' && <HandMade />}
-        {view === 'Home' && <Home />}
-
 
       </div>
     </div>
