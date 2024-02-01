@@ -13,7 +13,7 @@ module.exports = {
   getAllHandWorks: (req, res) => {
     model.getAllData((err, handworks) => {
       if (err) {
-        res.status(500).send("Error GETTING all handworks from the database: ", err);
+        res.status(500).send(err);
       } else {
         res.json(handworks);
       }

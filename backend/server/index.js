@@ -22,6 +22,41 @@ app.get('/', (req, res) => {
   res.send('Server Listening');
 });
 
-app.listen(PORT, () => {
-  console.log(`listen on http://localhost:${PORT}`);
-});
+
+
+// app.get('/login', (req, res) => {
+//   const sql = "SELECT * FROM user WHERE email=? AND password=?"
+//   db.query(sql, [data.email, data.password], (err, result) => {
+//   })
+// });
+
+
+
+
+
+
+// login: (req, res) => {
+//   model.login(req.body, (err, results) => {
+//     if (err) {
+//       return res.json("error")
+//     }
+//     if (data.length > 0) {
+//       return res.json("success")
+//     } else {
+//       return res.json("fail")
+//     }
+//   });
+// },
+
+
+//   login: (data, callback) => {
+//     const sql = "SELECT * FROM user WHERE email=? AND password=?"
+//     connection.query(sql, [data.email, data.password], (err, result) => {
+//       callback(err, result)
+//     })
+//   },
+
+
+    app.listen(PORT, () => {
+      console.log(`listen on http://localhost:${PORT}`);
+    });

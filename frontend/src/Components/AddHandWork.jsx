@@ -5,7 +5,7 @@ function AddHandWork({ onAddHandWork }) {
   const [formData, setFormData] = useState({
     image: '',
     title: '',
-    description: '',
+    desc: '', // Corrected field name to match the server-side model
     video: '',
   });
 
@@ -21,19 +21,15 @@ function AddHandWork({ onAddHandWork }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Send a POST request to add the handwork
-    axios.post('http://localhost:8080/handywork/CREATE', formData)
+    axios.post('http://localhost:8080/handywork/create', formData)
       .then(response => {
-        // Update the parent component's state with the new handwork
         onAddHandWork(response.data);
-        // Optionally, you can reset the form data
         setFormData({
           image: '',
           title: '',
-          description: '',
+          desc: '', // Corrected field name to match the server-side model
           video: '',
         });
-        // Close the modal after submission
         setShowModal(false);
       })
       .catch(error => {
@@ -69,7 +65,7 @@ function AddHandWork({ onAddHandWork }) {
               <br />
               <label>
                 Description:
-                <input type="text" name="description" value={formData.description} onChange={handleInputChange} />
+                <input type="text" name="desc" value={formData.desc} onChange={handleInputChange} />
               </label>
               <br />
               <label>
@@ -87,3 +83,4 @@ function AddHandWork({ onAddHandWork }) {
 }
 
 export default AddHandWork;
+

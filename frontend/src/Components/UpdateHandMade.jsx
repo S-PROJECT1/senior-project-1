@@ -63,5 +63,7 @@
 //     </Modal>
 //   );
 // }
+// console.log('hand')
+
 
 // export default UpdateHandMade;

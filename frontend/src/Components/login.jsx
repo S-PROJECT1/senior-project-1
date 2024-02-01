@@ -1,7 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import "./LoginAndRegister.css";
 import { Link } from 'react-router-dom';
 import Validation from "./LoginValidation.js"
+import axios from 'axios';
 // import { AuthContext } from '../context/AuthContext';
 
 const Login = (props) => {
@@ -17,6 +18,17 @@ const Login = (props) => {
       const handleSubmit = (e) => {
             e.preventDefault(); // Correct the typo here
             seterrors(Validation(values));
+            if (errors.email === "" && errors.password === "") {
+                  axios.post(`http://localhost:8080/user/login`, values)
+                        .then(res => {
+                              if (res.data === "success") {
+                                    props.switchView('Home')
+                              } else {
+                                    alert("Wrong Email or Password")
+                              }
+                        })
+                        .catch(err => console.log(err))
+            }
       }
 
 

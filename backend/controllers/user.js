@@ -12,6 +12,18 @@ module.exports = {
                   }
             });
       },
+      login: (req, res) => {
+            model.login(req.body, (err, results) => {
+                  if (err) {
+                        return res.json("error")
+                  }
+                  if (results.length > 0) {
+                        return res.json("success")
+                  } else {
+                        return res.json("fail")
+                  }
+            });
+      },
 
       DELETE: (req, res) => {
             model.DELETE(req.params.id, (err, results) => {
