@@ -11,7 +11,6 @@ import Register from './Components/Register.jsx';
 import Login from './Components/login.jsx';
 // import { AuthContext, AuthProvider } from './context/AuthContext.js';
 
-
 function App() {
   const [menuView, setMenuView] = useState(false);
   const [view, setView] = useState('Register');
