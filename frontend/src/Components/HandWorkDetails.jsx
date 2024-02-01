@@ -1,16 +1,19 @@
-import React from 'react';
 
-function HandWorkDetails({ handwork }) {
+import React from 'react'
+import '../css/App.css'
+
+const HandWorkDetails = ({ handwork }) => {
   return (
-    <div className="details-container">
+    <div className="details-container full-screen-details">
+      <h2>{handwork.title}</h2>
       <img src={handwork.image} alt="Handiwork" />
-      <div>
-        <h2>{handwork.title}</h2>
-        <p>{handwork.desc}</p>
-
-      </div>
+      <p>{handwork.desc}</p>
+      <video controls width="100%">
+        <source src={handwork.videos} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 }
 
-export default HandWorkDetails;
+export default HandWorkDetails
