@@ -1,10 +1,9 @@
-// Handiwork.jsx
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../css/App.css';
-import AddHandWork from './AddHandWork';
-import UpdateHandiwork from './UpdateHandiwork';
+import AddHandWork from './AddHandWork.jsx';
+import UpdateHandiwork from './UpdateHandiwork.jsx';
 
 function Handiwork() {
   const [handworkData, setHandworkData] = useState([]);
