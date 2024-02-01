@@ -4,6 +4,7 @@ body {
   font-family: 'Arial', sans-serif;
  background-color:#c8ad56;
 }
+
 /* side-bar ----------------------------------- */
 .katha {
   position: relative;
@@ -52,6 +53,7 @@ font-size: 35px;
   transition: left 0.3s ease;
   z-index: 1;
 }
+
 .sidebar:hover {
   left: 0;
 }
@@ -203,8 +205,9 @@ font-size: 35px;
 .card-button:hover {
   background-color: #45a049;
 }
+
 /* Home-i-Think */
-.work{
+.work {
   position: relative;
   left: 500px;
   font-size: bold;

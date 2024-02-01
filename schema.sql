@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `home`.`handmade` (
   `video` VARCHAR(1000) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 10
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -43,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `home`.`handwork` (
   `videos` VARCHAR(1000) NOT NULL,
   PRIMARY KEY (`id_Work`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -52,9 +54,9 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `home`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `firstName` VARCHAR(45) NOT NULL,
-  `lastName` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(405) NOT NULL,
+  `username` VARCHAR(450) NOT NULL,
+  `email` VARCHAR(450) NOT NULL,
+  `password` VARCHAR(405) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
