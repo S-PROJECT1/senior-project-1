@@ -23,7 +23,7 @@ module.exports = {
     const newHandWork = req.body;
     model.addHandWork(newHandWork, (err, results) => {
       if (err) {
-        res.status(500).send("Error adding all handworks from the database: ", err);
+        res.status(500).send(err);
       } else {
         res.json(results);
       }
