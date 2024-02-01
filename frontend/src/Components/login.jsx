@@ -1,36 +1,76 @@
 import React, { useState, useContext } from 'react';
 import "./LoginAndRegister.css";
+import { Link } from 'react-router-dom';
+import Validation from "./LoginValidation.js"
 // import { AuthContext } from '../context/AuthContext';
 
 const Login = (props) => {
-      const [pass, setPass] = useState("");
-      const [name, setName] = useState("");
-      // const { login } = useContext(AuthContext)
+      // const [pass, setPass] = useState("");
+      // const [name, setName] = useState("");
+      // // const { login } = useContext(AuthContext)
+      const [errors, seterrors] = useState({})
+      const [values, setvalues] = useState({
+            email: "",
+            password: ""
+      });
 
-      const handle = () => {
-            <e className="preventDefaul"></e>
+      const handleSubmit = (e) => {
+            e.preventDefault(); // Correct the typo here
+            seterrors(Validation(values));
       }
 
+
+      const handleInput = (e) => {
+            setvalues(prev => ({ ...prev, [e.target.name]: e.target.value }));
+      }
+
+
       return (
-            <>
-                  <form className='login'>
-                        <label>
-                              <p>Username</p>
-                              <input value={name} onChange={(e) => { setName(e.target.value) }} type="text" name="name" placeholder="Enter Username" />
-                        </label>
-                        {/* <label>
-                              <p>Password</p>
-                              <input value={pass} onClick={login} onChange={(e) => { setPass(e.target.value) }} type="password" name="password" placeholder="*********" />
-                        </label>  */}
-                        <label>
-                              <p>Password</p>
-                              <input value={pass}  onChange={(e) => { setPass(e.target.value) }} type="password" name="password" placeholder="*********" />
-                        </label>
-                        {/* <input type="submit" value="Log In" /> */}
-                        <button className='have' type='submit'>Log In</button>
-                  </form>
+            <form className='login' action='' onSubmit={handleSubmit}>
+                  <label>
+                        <p>Email</p>
+                        <input onChange={handleInput} type="text" name="email" placeholder="Enter Email" />
+                        <span>{errors.email && <span>{errors.email}</span>}</span>
+                  </label>
+                  <label>
+                        <p>Password</p>
+                        <input onChange={handleInput} type="password" name="password" placeholder="*********" />
+                        <span>{errors.password && <span>{errors.password}</span>}</span>
+                  </label>
+                  {/* <input type="submit" value="Log In" /> */}
+                  <button type='submit' className='have'  >Log In</button>
                   <button onClick={() => props.switchView('Register')} className='next'>Dont Have An Account? Register</button>
-            </>
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+            //  <>
+            //       <form className='login'>
+            //             <label>
+            //                   <p>Username</p>
+            //                   <input value={name} onChange={(e) => { setName(e.target.value) }} type="text" name="name" placeholder="Enter Username" />
+            //             </label>
+            //             {/* <label>
+            //                   <p>Password</p>
+            //                   <input value={pass} onClick={login} onChange={(e) => { setPass(e.target.value) }} type="password" name="password" placeholder="*********" />
+            //             </label>  */}
+            //             <label>
+            //                   <p>Password</p>
+            //                   <input value={pass}  onChange={(e) => { setPass(e.target.value) }} type="password" name="password" placeholder="*********" />
+            //             </label>
+            //             {/* <input type="submit" value="Log In" /> */}
+            //             <button className='have'  >Log In</button>
+            //       </form>
+            //       <button onClick={() => props.switchView('Register')} className='next'>Dont Have An Account? Register</button>
+            // </>
       );
 }
 // 
