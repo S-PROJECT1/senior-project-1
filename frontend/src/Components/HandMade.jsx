@@ -1,13 +1,15 @@
-// HandMade.js
 
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import AddHandMade from "./AddHandMade";
-import UpdateHandMade from './UpdateHandMade';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import AddHandMade from "./AddHandMade"
+import HandMadeDetails from './HandMadeDetails'
+import DetailsModal from './DetailsModal'
+import UpdateHandMade from './UpdateHandMade'
+import '../css/App.css'
 
 function HandMade() {
-  const [handmades, setHandmades] = useState([]);
-  const [selectedHandmade, setSelectedHandmade] = useState(null);
+  const [handmades, setHandmades] = useState([])
+  const [selectedItem, setSelectedItem] = useState(null)
 
   useEffect(() => {
     axios.get('http://localhost:8080/handmade/getAll')
@@ -23,48 +25,57 @@ function HandMade() {
     setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
   };
 
+  const handleShowDetails = (handmade) => {
+    setSelectedItem({ type: 'handmade', data: handmade });
+  };
+
+  const handleCloseModal = () => {
+    setSelectedItem(null);
+  };
+
   const handleUpdateClick = (handmade) => {
-    // Set the selectedHandmade to open the UpdateHandMade component
-    setSelectedHandmade(handmade);
+    setSelectedItem({ type: 'update', data: handmade });
   };
 
   const handleUpdateHandmade = (updatedHandmade) => {
-    // Update the handmades array with the new data
     setHandmades((prevHandmades) =>
       prevHandmades.map((handmade) =>
         handmade.id === updatedHandmade.id ? updatedHandmade : handmade
       )
     );
-    // Clear the selectedHandmade to close the UpdateHandMade component
-    setSelectedHandmade(null);
+    setSelectedItem(null);
   };
 
-  const handleCancelUpdate = () => {
-    // Clear the selectedHandmade to close the UpdateHandMade component
-    setSelectedHandmade(null);
-  };
   return (
-    <div className="cards-container">
+    <div className="full-screen-container">
       <AddHandMade onAddHandmade={handleAddHandmade} />
-      {handmades.map(handmade => (
-        <div key={handmade.id} className="card">
-          <img src={handmade.img} alt="Handiwork" />
-          <div>
-            <button className="card-button" onClick={() => handleUpdateClick(handmade)}>
-              Update
-            </button>
-            <div className="card-title">{handmade.title}</div>
-            <div className="card-description">{handmade.description}</div>
-            <button className="card-button">See more details</button>
+      <div className="cards-container">
+        {handmades.map(handmade => (
+          <div key={handmade.id} className="card">
+            <img src={handmade.img} alt="Handmade" />
+            <div>
+              <div className="card-title">{handmade.title}</div>
+              <div className="card-description">{handmade.desc}</div>
+              <button className="card-button" onClick={() => handleShowDetails(handmade)}>
+                See more details
+              </button>
+              <button className="card-button" onClick={() => handleUpdateClick(handmade)}>
+                Update
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
-      {selectedHandmade && (
-        <UpdateHandMade
-          onUpdateHandmade={handleUpdateHandmade}
-          onCancel={handleCancelUpdate}
-          initialData={selectedHandmade}
-        />
+        ))}
+      </div>
+      {selectedItem && (
+        selectedItem.type === 'handmade' ? (
+          <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />
+        ) : (
+          <UpdateHandMade
+            onUpdateHandmade={handleUpdateHandmade}
+            onCancel={handleCloseModal}
+            initialData={selectedItem.data}
+          />
+        )
       )}
     </div>
   );
