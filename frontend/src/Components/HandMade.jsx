@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import AddHandMade from "./AddHandMade"
+import HandMadeDetails from './HandMadeDetails'
+import DetailsModal from './DetailsModal'
+import '../css/App.css'
+
+function HandMade() {
+  const [handmades, setHandmades] = useState([])
+  const [selectedItem, setSelectedItem] = useState(null)
+=======
 // HandMade.js
 
 import React, { useEffect, useState } from 'react';
@@ -8,6 +21,7 @@ import UpdateHandMade from './UpdateHandMade';
 function HandMade() {
   const [handmades, setHandmades] = useState([]);
   const [selectedHandmade, setSelectedHandmade] = useState(null);
+>>>>>>> 947b38855bbe9710317eb5bf22c5b5cb77b77a0d
 
   useEffect(() => {
     axios.get('http://localhost:8080/handmade/getAll')
@@ -15,6 +29,23 @@ function HandMade() {
         setHandmades(response.data);
       })
       .catch(error => {
+<<<<<<< HEAD
+        console.error('Error fetching data:', error)
+      })
+  }, [])
+
+  const handleAddHandmade = (newHandmade) => {
+    setHandmades((prevHandmades) => [...prevHandmades, newHandmade])
+  }
+
+  const handleShowDetails = (handmade) => {
+    setSelectedItem({ type: 'handmade', data: handmade })
+  }
+
+  const handleCloseModal = () => {
+    setSelectedItem(null)
+  }
+=======
         console.error('Error fetching data:', error);
       });
   }, []);
@@ -22,6 +53,7 @@ function HandMade() {
   const handleAddHandmade = (newHandmade) => {
     setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
   };
+>>>>>>> 947b38855bbe9710317eb5bf22c5b5cb77b77a0d
 
   const handleUpdateClick = (handmade) => {
     // Set the selectedHandmade to open the UpdateHandMade component
@@ -44,8 +76,25 @@ function HandMade() {
     setSelectedHandmade(null);
   };
   return (
-    <div className="cards-container">
+    <div className="full-screen-container">
       <AddHandMade onAddHandmade={handleAddHandmade} />
+<<<<<<< HEAD
+      <div className="cards-container">
+        {handmades.map(handmade => (
+          <div key={handmade.id} className="card">
+            <img src={handmade.img} alt="Handmade" />
+            <div>
+              <div className="card-title">{handmade.title}</div>
+              <div className="card-description">{handmade.desc}</div>
+              <button className="card-button" onClick={() => handleShowDetails(handmade)}>
+                See more details
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+      {selectedItem && <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />}
+=======
       {handmades.map(handmade => (
         <div key={handmade.id} className="card">
           <img src={handmade.img} alt="Handmade" />
@@ -66,8 +115,9 @@ function HandMade() {
           initialData={selectedHandmade}
         />
       )}
+>>>>>>> 947b38855bbe9710317eb5bf22c5b5cb77b77a0d
     </div>
   );
 }
 
-export default HandMade;
+export default HandMade

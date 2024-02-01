@@ -21,8 +21,7 @@ function Handiwork() {
   }, []);
 
   const handleAddHandWork = (newHandWork) => {
-    // Update the state with the new handwork
-    setHandworkData((prevHandworkData) => [...prevHandworkData, newHandWork]);
+    setHandworkData((prevHandworkData) => [...prevHandworkData, newHandWork])
   }
 
   const handleUpdateClick = (handiwork) => {
@@ -47,7 +46,7 @@ function Handiwork() {
   };
 
   return (
-    <div className="cards-container">
+    <div className="full-screen-container">
       <AddHandWork onAddHandWork={handleAddHandWork} />
       {handworkData.map(handiwork => (
         <div key={handiwork.id_Work} className="card">
@@ -70,7 +69,7 @@ function Handiwork() {
         />
       )}
     </div>
-  );
+  )
 }
 
-export default Handiwork;
+export default Handiwork
