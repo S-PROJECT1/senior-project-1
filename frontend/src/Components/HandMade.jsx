@@ -48,7 +48,7 @@ function HandMade() {
       <AddHandMade onAddHandmade={handleAddHandmade} />
       {handmades.map(handmade => (
         <div key={handmade.id} className="card">
-          <img src={handmade.img} alt="Handiwork" />
+          <img src={handmade.img} alt="Handmade" />
           <div>
             <button className="card-button" onClick={() => handleUpdateClick(handmade)}>
               Update
