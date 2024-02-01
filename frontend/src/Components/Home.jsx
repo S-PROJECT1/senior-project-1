@@ -1,14 +1,19 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Handiwork from './HandiWork'
-import HandMade from './HandMade'
+import React from 'react';
+import Navbar from './Navbar';
+import Handiwork from './HandiWork.jsx';
+import HandMade from './HandMade.jsx';
+import Search from './Search'
 
-export const Home = () => {
+
+const Home = () => {
   return (
     <div>
-        <Navbar/>
+      <Navbar />
+      <Handiwork />
+      <HandMade />
+      <Search />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

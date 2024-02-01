@@ -1,5 +1,5 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const cors = require("cors");
 const PORT = 8080
 const db = require("../database/index.js")
@@ -11,18 +11,17 @@ const route3 = require("../routes/handywork.js")
 
 
 
-app.use(cors())
-app.use(express.json())
-app.use("/user", route1)
-app.use("/handmade", route2)
-app.use("/handywork", route3)
-
+app.use(cors());
+app.use(express.json());
+app.use("/user", route1);
+app.use("/handmade", route2);
+app.use("/handywork", route3);
 
 
 app.get('/', (req, res) => {
-      res.send('Server Listening')
-})
+  res.send('Server Listening');
+});
 
 app.listen(PORT, () => {
-      console.log(`listen on  http://localhost:${PORT}`)
-})
+  console.log(`listen on http://localhost:${PORT}`);
+});
