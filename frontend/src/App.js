@@ -7,6 +7,8 @@ import AboutUs from './Components/About.jsx';
 import { FaTools, FaHandPaper } from 'react-icons/fa';
 import { AiFillHome, AiFillPhone, AiFillPlusCircle } from 'react-icons/ai';
 import '../src/css/App.css';
+import Footer from './Components/Footer.jsx';
+
 
 function App() {
   const [menuView, setMenuView] = useState(false);
@@ -53,6 +55,8 @@ function App() {
         {view === 'Handiwork' && <Handiwork  />}
         {view === 'HandMade' && <HandMade />}
         {view === 'About' && <AboutUs />}
+        <Footer/>
+      
       </div>
     </div>
   );
