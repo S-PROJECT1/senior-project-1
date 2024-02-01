@@ -22,4 +22,20 @@ module.exports = {
                   }
             });
       },
+      searchByName: (req, res) => {
+            const firstName = req.params.title;
+            model.searchByName(firstName, (err, result) => {
+              if (err) {
+                res.status(500).send(err);
+              } else {
+                if (!result) {
+                  res.status(404).send("Item not found");
+                } else {
+                  res.status(200).json(result);
+                }
+            }
+      }
+)}
+
+      
 }
