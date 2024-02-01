@@ -1,3 +1,4 @@
+// UpdateHandiwork.jsx
 
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -5,28 +6,28 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root'); // Set the app root element for accessibility
 
-function UpdateHandMade({ onUpdateHandmade, onCancel, initialData }) {
-  const [updatedHandmade, setUpdatedHandmade] = useState(initialData);
+function UpdateHandiwork({ onUpdateHandiwork, onCancel, initialData }) {
+  const [updatedHandiwork, setUpdatedHandiwork] = useState(initialData);
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUpdatedHandmade((prevData) => ({ ...prevData, [name]: value }));
+    setUpdatedHandiwork((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // Send a request to update the handmade on the server
-      await axios.put(`http://localhost:8080/handmade/update/${updatedHandmade.id}`, updatedHandmade);
+      // Send a request to update the handiwork on the server
+      await axios.put(`http://localhost:8080/handywork/update/${updatedHandiwork.id_Work}`, updatedHandiwork);
 
-      // After the update is successful, trigger the onUpdateHandmade function
-      onUpdateHandmade(updatedHandmade);
+      // After the update is successful, trigger the onUpdateHandiwork function
+      onUpdateHandiwork(updatedHandiwork);
       // Close the modal and update form
       setIsModalOpen(false);
     } catch (error) {
-      console.error('Error updating handmade:', error);
+      console.error('Error updating handiwork:', error);
     }
   };
 
@@ -34,26 +35,26 @@ function UpdateHandMade({ onUpdateHandmade, onCancel, initialData }) {
     <Modal
       isOpen={isModalOpen}
       onRequestClose={onCancel}
-      contentLabel="Update Handmade Modal"
+      contentLabel="Update Handiwork Modal"
     >
       <div className="update-popup">
         <form onSubmit={handleSubmit}>
-          {/* Add form elements for updating handmade information */}
+          {/* Add form elements for updating handiwork information */}
           <label>Title:</label>
           <input
             type="text"
             name="title"
-            value={updatedHandmade.title}
+            value={updatedHandiwork.title || ''}
             onChange={handleChange}
           />
           <label>Description:</label>
           <input
             type="text"
-            name="description"
-            value={updatedHandmade.description}
+            name="desc"
+            value={updatedHandiwork.desc || ''}
             onChange={handleChange}
           />
-          {/* Add other form elements for img, video, etc. */}
+          {/* Add other form elements for image, etc. */}
           <button type="submit">Update</button>
           <button type="button" onClick={onCancel}>
             Cancel
@@ -63,7 +64,5 @@ function UpdateHandMade({ onUpdateHandmade, onCancel, initialData }) {
     </Modal>
   );
 }
-console.log('hand')
 
-
-export default UpdateHandMade;
+export default UpdateHandiwork;
