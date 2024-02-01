@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import AddHandMade from "./AddHandMade"
-import HandMadeDetails from './HandMadeDetails'
 import DetailsModal from './DetailsModal'
 import UpdateHandMade from './UpdateHandMade'
 import '../css/App.css'

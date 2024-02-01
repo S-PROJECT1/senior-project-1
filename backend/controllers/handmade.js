@@ -13,7 +13,7 @@ module.exports = {
   getAllHandMades: (req, res) => {
     model.getAllData((err, handmades) => {
       if (err) {
-        res.status(500).send("Error GETTING all handmades from the database: ", err);
+        res.status(500).send(err);
       } else {
         res.json(handmades);
       }
@@ -23,7 +23,7 @@ module.exports = {
     const newHandmade = req.body;
     model.addOne(newHandmade, (err, results) => {
       if (err) {
-        res.status(500).send("Error adding one handmade to the database: ", err);
+        res.status(500).send(err);
       } else {
         res.json(results);
       }

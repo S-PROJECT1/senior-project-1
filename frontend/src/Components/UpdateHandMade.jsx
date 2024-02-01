@@ -63,5 +63,7 @@ function UpdateHandMade({ onUpdateHandmade, onCancel, initialData }) {
     </Modal>
   );
 }
+console.log('hand')
+
 
 export default UpdateHandMade;
