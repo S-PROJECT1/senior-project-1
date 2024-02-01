@@ -6,8 +6,8 @@ function AddHandWork({ onAddHandWork }) {
     image: '',
     title: '',
     desc: '', // Corrected field name to match the server-side model
-    video: '',
-  });
+    videos: '',
+  },[]);
 
   const [showModal, setShowModal] = useState(false);
 
