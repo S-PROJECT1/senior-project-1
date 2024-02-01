@@ -222,12 +222,10 @@ body {
 }
 
 .full-screen-container {
-  width: 100vw;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
 }
 
 .cards-container {
