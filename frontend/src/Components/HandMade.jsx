@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddHandMade from "./AddHandMade";
+import UpdateHandMade from './UpdateHandMade';
 function HandMade() {
   const [handmades, setHandmades] = useState([])
+  const [selectedHandmade, setSelectedHandmade] = useState(null)
 
   useEffect(() => {
     axios.get('http://localhost:8080/handmade/getAll')
@@ -16,6 +18,28 @@ function HandMade() {
   const handleAddHandmade = (newHandmade) => {
     setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
   }
+  const handleUpdateClick = (handmade) => {
+    // Set the selectedHandmade to open the UpdateHandMade component
+    setSelectedHandmade(handmade);
+  };
+
+  const handleUpdateHandmade = (updatedHandmade) => {
+    // Update the handmades array with the new data
+    setHandmades((prevHandmades) =>
+      prevHandmades.map((handmade) =>
+        handmade.id === updatedHandmade.id ? updatedHandmade : handmade
+      )
+    );
+    // Clear the selectedHandmade to close the UpdateHandMade component
+    setSelectedHandmade(null);
+  };
+
+  const handleCancelUpdate = () => {
+    // Clear the selectedHandmade to close the UpdateHandMade component
+    setSelectedHandmade(null);
+  };
+
+
 
   return (
     <div className="cards-container">
@@ -30,6 +54,13 @@ function HandMade() {
           </div>
         </div>
       ))}
+      {selectedHandmade && (
+        <UpdateHandMade
+          onUpdateHandmade={handleUpdateHandmade}
+          onCancel={handleCancelUpdate}
+          initialData={selectedHandmade}
+        />
+      )}
     </div>
   )
 }

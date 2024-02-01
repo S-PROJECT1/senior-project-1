@@ -6,5 +6,5 @@ routes.get('/GETALL', controller.getAllHandMades);
 routes.delete('/DELETE/:id', controller.DELETE);
 routes.post('/add', controller.addOneHandMade);
 routes.get('/getbytitle/:title', controller.getByTitle); 
-
+routes.put('/Update/:id',controller.update)
 module.exports = routes;
