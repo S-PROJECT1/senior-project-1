@@ -33,7 +33,7 @@ const AboutUs = () => {
       <div className='service2'>
         
         <div className="service-content-2">
-          <img src='https://www.shutterstock.com/image-photo/black-family-painting-house-wall-600nw-1070742824.jpg' alt="Our Services" />
+          <img src='https://i5.walmartimages.com/asr/56566034-97e2-4a49-adfd-730bc363fc23.53529513a16f27fed7baae8fcf8519c7.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF' alt="Our Services" />
           <p>In HandiWork page you will find a lot of services that we provide to help you in your daily life work at the house without the need for foreign services. We provide step-by-step guides through videos, teaching you how to do it from scratch.</p>
         </div>
       </div>

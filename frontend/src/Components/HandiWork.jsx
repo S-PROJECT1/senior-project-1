@@ -55,7 +55,7 @@ function Handiwork() {
               Update
             </button>
             <div className="card-title">{handiwork.title}</div>
-            <div className="card-description">{handiwork.description}</div>
+            <div className="card-description">{handiwork.desc}</div>
             <button className="card-button">See more details</button>
           </div>
         </div>

@@ -21,7 +21,7 @@ function AddHandWork({ onAddHandWork }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8080/handywork/CREATE', formData)
+    axios.post('http://localhost:8080/handywork/create', formData)
       .then(response => {
         onAddHandWork(response.data);
         setFormData({
