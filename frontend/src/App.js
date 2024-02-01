@@ -10,6 +10,8 @@ import '../src/css/App.css';
 import Register from './Components/Register.jsx';
 import Login from './Components/login.jsx';
 // import { AuthContext, AuthProvider } from './context/AuthContext.js';
+import Footer from './Components/Footer.jsx';
+
 
 function App() {
   const [menuView, setMenuView] = useState(false);
@@ -86,6 +88,8 @@ function App() {
 
 
         {view === 'About' && <AboutUs />}
+        <Footer/>
+      
       </div>
     </div>
   );

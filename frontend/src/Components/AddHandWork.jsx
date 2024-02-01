@@ -5,8 +5,8 @@ function AddHandWork({ onAddHandWork }) {
   const [formData, setFormData] = useState({
     image: '',
     title: '',
-    desc: '', // Corrected field name to match the server-side model
-    video: '',
+    desc: '', 
+    videos: '',
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -28,7 +28,7 @@ function AddHandWork({ onAddHandWork }) {
           image: '',
           title: '',
           desc: '', // Corrected field name to match the server-side model
-          video: '',
+          videos: '',
         });
         setShowModal(false);
       })
@@ -70,7 +70,7 @@ function AddHandWork({ onAddHandWork }) {
               <br />
               <label>
                 Video URL:
-                <input type="text" name="video" value={formData.video} onChange={handleInputChange} />
+                <input type="text" name="videos" value={formData.videos} onChange={handleInputChange} />
               </label>
               <br />
               <button type="submit">Add Handwork</button>
@@ -83,4 +83,5 @@ function AddHandWork({ onAddHandWork }) {
 }
 
 export default AddHandWork;
+
 
