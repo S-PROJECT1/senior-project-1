@@ -1,8 +1,7 @@
 const express = require('express')
-const controller = require("../controllers/user.js")
+const controller = require("../controllers/user")
+const jwt = require('jsonwebtoken')
 const routes = express.Router()
-
-
 
 routes.delete("/DELETE/:id", controller.DELETE)
 routes.post("/add", controller.add)
