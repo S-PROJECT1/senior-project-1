@@ -24,6 +24,8 @@ const verifyToken = (req, res, next) => {
 };
 // jwt token middlewear--------------------------------------------------------
 
+console.log("tessssssssssssttttttttt");
+
 app.use("/user", verifyToken, route1)
 app.use("/handmade", route2)
 app.use("/handywork", route3)

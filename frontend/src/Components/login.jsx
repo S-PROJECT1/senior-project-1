@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState} from 'react';
 import "./LoginAndRegister.css";
-import { Link } from 'react-router-dom';
 import Validation from "./LoginValidation.js"
 import axios from 'axios';
 // import { AuthContext } from '../context/AuthContext';
