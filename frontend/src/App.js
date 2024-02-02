@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
 import Navbar from './Components/Navbar';
@@ -15,7 +15,7 @@ import Footer from './Components/Footer.jsx';
 
 function App() {
   const [menuView, setMenuView] = useState(false);
-  const [view, setView] = useState('Register');
+  const [view, setView] = useState('Login');
   // const [curr, setcurr] = useState("login");
 
   // const { isLoading, userToken } = useContext(AuthContext)
@@ -82,12 +82,10 @@ function App() {
 
         {view === 'Handiwork' && <Handiwork />}
         {view === 'HandMade' && <HandMade />}
-        {/* {view === 'Home' && <Home />} */}
         {view === 'Login' && <Login switchView={switchView} />}
         {view === 'Register' && <Register switchView={switchView} />}
-
-
         {view === 'About' && <AboutUs />}
+
         <Footer/>
       
       </div>

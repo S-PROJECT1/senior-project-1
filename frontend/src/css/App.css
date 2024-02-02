@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
- background-color:#c8ad56;
+ background-color:#ffffff;
 }
 
 /* side-bar ----------------------------------- */
@@ -17,7 +17,7 @@ font-size: 35px;
 
 .nav:hover {
   background-color: #34495e;
-  /* Darker blue on hover */
+  
 }
 
 .items {
@@ -28,12 +28,12 @@ font-size: 35px;
   align-items: center;
   color: #000000;
   font-size: 21px;
-  /* Align items vertically in the middle */
+
 }
 
 
 .items:hover {
-  color: #3498db;
+  color: #74cdc5;
   text-decoration: underline;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   /* Add a subtle box-shadow on hover */
@@ -43,7 +43,7 @@ font-size: 35px;
 
 .sidebar {
   background: transparent;
-  width: 141px;
+  width: 129px;
   padding: 20px;
   color: white;
   height: 100vh;
@@ -213,13 +213,7 @@ font-size: 35px;
 border-radius:20px;
 }
 
-/* App.css */
 
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #fefdf9;
-}
 
 .full-screen-container {
   display: flex;
@@ -327,4 +321,13 @@ body {
   .card {
     width: calc(100% - 20px);
   }
+}
+
+
+/* Chat.css */
+/* Add styles to your existing CSS file or create a new one */
+.rcw-widget-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
