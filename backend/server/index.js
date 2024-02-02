@@ -1,21 +1,32 @@
 const express = require('express');
 const app = express();
 const cors = require("cors");
-const PORT = 8080
-const db = require("../database/index.js")
-const route1 = require("../routes/user.js")
-const route2 = require("../routes/handmade.js")
-const route3 = require("../routes/handywork.js")
-
-
-
-
+const jwt = require('jsonwebtoken');
+const PORT = 8080;
+const db = require("../database/index.js");
+const route1 = require("../routes/user.js");
+const route2 = require("../routes/handmade.js");
+const route3 = require("../routes/handywork.js");
 
 app.use(cors());
 app.use(express.json());
-app.use("/user", route1);
-app.use("/handmade", route2);
-app.use("/handywork", route3);
+
+// jwt token middlewear--------------------------------------------------------
+const verifyToken = (req, res, next) => {
+  const token = req.header('Authorization');
+  if (!token) return res.status(401).json({ message: 'Access denied. No token provided.' });
+
+  jwt.verify(token, 'your_secret_key', (err, decoded) => {
+    if (err) return res.status(401).json({ message: 'Invalid token.' });
+    req.user = decoded;
+    next();
+  });
+};
+// jwt token middlewear--------------------------------------------------------
+
+app.use("/user", verifyToken, route1)
+app.use("/handmade", route2)
+app.use("/handywork", route3)
 
 
 app.get('/', (req, res) => {
@@ -57,6 +68,6 @@ app.get('/', (req, res) => {
 //   },
 
 
-    app.listen(PORT, () => {
-      console.log(`listen on http://localhost:${PORT}`);
-    });
+app.listen(PORT, () => {
+  console.log(`listen on http://localhost:${PORT}`);
+});
