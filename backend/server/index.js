@@ -42,8 +42,9 @@ const verifyToken = (req, res, next) => {
 
 // Apply session-based authentication middleware to specific routes
 app.use("/user", requireLogin, route1);
-app.use("/handmade", requireLogin, route2);
-app.use("/handywork", requireLogin, route3);
+app.use("/handmade", requireLogin, verifyToken, route2);
+app.use("/handywork", requireLogin, verifyToken, route3);
+
 
 app.get('/', (req, res) => {
   res.send('Server Listening');
