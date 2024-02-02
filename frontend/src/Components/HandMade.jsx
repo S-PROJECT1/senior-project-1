@@ -9,12 +9,15 @@ import '../css/App.css';
 function HandMade() {
   const [handmades, setHandmades] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [view, setView] = useState('main'); // Added view state
 
   useEffect(() => {
     axios.get('http://localhost:8080/handmade/getAll')
-      .then(response => setHandmades(response.data))
-      .catch(error => console.error('Error fetching data:', error));
+      .then(response => {
+        setHandmades(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
   }, []);
 
   const handleAddHandmade = (newHandmade) => {
@@ -23,12 +26,10 @@ function HandMade() {
 
   const handleShowDetails = (handmade) => {
     setSelectedItem({ type: 'handmade', data: handmade });
-    setView('details');
   };
 
   const handleCloseModal = () => {
     setSelectedItem(null);
-    setView('main');
   };
 
   const handleUpdateClick = (handmade) => {
@@ -44,10 +45,10 @@ function HandMade() {
     setSelectedItem(null);
   };
 
-  const handleDeleteClick = (id) => {
-    axios.delete(`http://localhost:8080/handmade/DELETE/${id}`)
+  const handleDeleteClick = (handmadeId) => {
+    axios.delete(`http://localhost:8080/handmade/delete/${handmadeId}`)
       .then(response => {
-        setHandmades((prevHandmades) => prevHandmades.filter(handmade => handmade.id !== id));
+        setHandmades((prevHandmades) => prevHandmades.filter(handmade => handmade.id !== handmadeId));
       })
       .catch(error => {
         console.error('Error deleting handmade:', error);
@@ -77,21 +78,16 @@ function HandMade() {
           </div>
         ))}
       </div>
-      {selectedItem && view === 'details' && (
-        <HandMadeDetails
-          data={selectedItem.data}
-          onBack={() => setView('main')}
-        />
-      )}
-      {selectedItem && selectedItem.type === 'update' && view === 'main' && (
-        <UpdateHandMade
-          onUpdateHandmade={handleUpdateHandmade}
-          onCancel={handleCloseModal}
-          initialData={selectedItem.data}
-        />
-      )}
-      {selectedItem && view === 'main' && (
-        <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />
+      {selectedItem && (
+        selectedItem.type === 'handmade' ? (
+          <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />
+        ) : (
+          <UpdateHandMade
+            onUpdateHandmade={handleUpdateHandmade}
+            onCancel={handleCloseModal}
+            initialData={selectedItem.data}
+          />
+        )
       )}
     </div>
   );
