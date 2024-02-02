@@ -3,7 +3,7 @@ const connection = require("../database/index")
 
 module.exports = {
       addUser: (newUser, callback) => {
-            const sql = "INSERT INTO `user` SET username=?, email=?, password=?"
+            const sql = "INSERT INTO user SET username=?, email=?, password=?"
             connection.query(sql, [newUser.username, newUser.email, newUser.password], (err, result) => {
                   callback(err, result)
             })
