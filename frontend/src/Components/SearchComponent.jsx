@@ -9,6 +9,7 @@ const SearchComponent = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get(`http://localhost:8080/handmade/getbytitle/${searchTerm}`);
+      console.log(response); // log the response
       setSearchResults(response.data);
       setError(null);
     } catch (error) {
@@ -16,6 +17,7 @@ const SearchComponent = () => {
       console.error(error);
     }
   };
+  
 
   return (
     <div>
