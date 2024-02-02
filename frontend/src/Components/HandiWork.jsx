@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../css/App.css';
@@ -9,7 +8,7 @@ function Handiwork() {
   const [handworkData, setHandworkData] = useState([]);
   const [selectedHandiwork, setSelectedHandiwork] = useState(null);
 
-  useEffect(() => {
+  const fetchHandworkData = () => {
     axios.get('http://localhost:8080/handywork/GETALL')
       .then(response => {
         setHandworkData(response.data);
@@ -17,36 +16,39 @@ function Handiwork() {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
+  };
+
+  useEffect(() => {
+    fetchHandworkData();
   }, []);
 
   const handleAddHandWork = (newHandWork) => {
-    setHandworkData((prevHandworkData) => [...prevHandworkData, newHandWork])
+    setHandworkData((prevHandworkData) => [...prevHandworkData, newHandWork]);
   }
 
   const handleUpdateClick = (handiwork) => {
-    // Set the selectedHandiwork to open the UpdateHandiwork component
     setSelectedHandiwork(handiwork);
   };
 
   const handleUpdateHandiwork = (updatedHandiwork) => {
-    // Update the handworkData array with the new data
     setHandworkData((prevHandworkData) =>
       prevHandworkData.map((handiwork) =>
         handiwork.id_Work === updatedHandiwork.id_Work ? updatedHandiwork : handiwork
       )
     );
-    // Clear the selectedHandiwork to close the UpdateHandiwork component
     setSelectedHandiwork(null);
   };
 
   const handleCancelUpdate = () => {
-    // Clear the selectedHandiwork to close the UpdateHandiwork component
     setSelectedHandiwork(null);
   };
 
   return (
     <div className="full-screen-container">
-      <AddHandWork onAddHandWork={handleAddHandWork} />
+      <AddHandWork onAddHandWork={(newHandWork) => {
+        handleAddHandWork(newHandWork);
+        fetchHandworkData(); // Fetch data again after adding
+      }} />
       {handworkData.map(handiwork => (
         <div key={handiwork.id_Work} className="card">
           <img src={handiwork.image} alt="Handiwork" />
@@ -68,7 +70,7 @@ function Handiwork() {
         />
       )}
     </div>
-  )
+  );
 }
 
-export default Handiwork
+export default Handiwork;
