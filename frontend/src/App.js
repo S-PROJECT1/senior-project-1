@@ -11,7 +11,7 @@ import Register from './Components/Register.jsx';
 import Login from './Components/login.jsx';
 // import { AuthContext, AuthProvider } from './context/AuthContext.js';
 import Footer from './Components/Footer.jsx';
-import Homy from './Components/Homy.jsx';
+// import Homy from './Components/Homy.jsx';
 import ChatBot from 'react-simple-chatbot'
 import { ThemeProvider } from 'styled-components';
 function App() {
@@ -148,7 +148,7 @@ function App() {
         {view === 'Login' && <Login switchView={switchView} />}
         {view === 'Register' && <Register switchView={switchView} />}
         {view === 'About' && <AboutUs />}
-        <Homy/>
+        {/* <Homy/> */}
         <Footer />
 
 

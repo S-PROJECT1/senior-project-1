@@ -18,10 +18,10 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// Middleware to check if the user is logged in
+// check if the user is logged 
 const requireLogin = (req, res, next) => {
   if (req.session && req.session.user) {
-    return next(); // User is logged in, proceed to the next middleware
+    return next(); // proceed to the next if user is logged in
   } else {
     return res.status(401).json({ message: 'Access denied. Not logged in.' });
   }
@@ -40,10 +40,10 @@ const verifyToken = (req, res, next) => {
 };
 // jwt token middleware--------------------------------------------------------
 
-// Apply session-based authentication middleware to specific routes
 app.use("/user", requireLogin, route1);
-app.use("/handmade", requireLogin, verifyToken, route2);
-app.use("/handywork", requireLogin, verifyToken, route3);
+app.use("/handmade", requireLogin, route2, verifyToken);
+app.use("/handywork", requireLogin, route3, verifyToken);
+
 
 
 app.get('/', (req, res) => {
@@ -83,6 +83,9 @@ app.get('/', (req, res) => {
 //     })
 //   },
 
+module.exports = {
+  verifyToken
+};
 
 app.listen(PORT, () => {
   console.log(`listen on http://localhost:${PORT}`);
