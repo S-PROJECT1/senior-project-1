@@ -1,4 +1,3 @@
-// Handiwork.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddHandWork from './AddHandWork';
@@ -24,7 +23,7 @@ const Handiwork = () => {
 
   const handleAddHandWork = (newHandWork) => {
     setHandworkData((prevHandworkData) => [...prevHandworkData, newHandWork]);
-  }
+  };
 
   const handleUpdateClick = (handiwork) => {
     setSelectedItem({ type: 'update', data: handiwork });
@@ -42,6 +41,16 @@ const Handiwork = () => {
       )
     );
     setSelectedItem(null);
+  };
+
+  const handleDeleteClick = (id) => {
+    axios.delete(`http://localhost:8080/handywork/DELETE/${id}`)
+      .then(response => {
+        setHandworkData((prevHandworkData) => prevHandworkData.filter(handiwork => handiwork.id_Work !== id));
+      })
+      .catch(error => {
+        console.error('Error deleting handiwork:', error);
+      });
   };
 
   const handleCancelUpdate = () => {
@@ -65,6 +74,9 @@ const Handiwork = () => {
                 </button>
                 <button className="card-button" onClick={() => handleUpdateClick(handiwork)}>
                   Update
+                </button>
+                <button className="card-button delete-button" onClick={() => handleDeleteClick(handiwork.id_Work)}>
+                  Delete
                 </button>
               </div>
             </div>
@@ -94,3 +106,4 @@ const Handiwork = () => {
 };
 
 export default Handiwork;
+console.log("first")
