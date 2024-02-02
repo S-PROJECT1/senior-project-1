@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const secretKey = process.env.JWT_SECRET_KEY || 'babala-ya-7asbala-mad9ouch-3arbou5-ba5bou7';
 // 'babala-ya-7asbala-mad9ouch-3arbou5-ba5bou7' //this is a hardcoded jwt key  for testing or idk 
 // we also need to use a hash function like bcrypt to securely to store hashed passwords in the database instead of plain text
+// --
 
 const generateToken = (userId, username) => {
       return jwt.sign({ id: userId, username: username }, secretKey);
