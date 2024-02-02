@@ -1,7 +1,7 @@
 
 import React from 'react'
-import HandMadeDetails from './HandMadeDetails'
-import HandWorkDetails from './HandWorkDetails'
+import HandMadeDetails from './HandMadeDetails';
+import HandWorkDetails from './HandWorkDetails';
 import '../css/App.css'
 
 const DetailsModal = ({ selectedItem, onClose }) => {
