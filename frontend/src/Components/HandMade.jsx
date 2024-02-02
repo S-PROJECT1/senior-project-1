@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import AddHandMade from './AddHandMade';
+import AddHandMade from "./AddHandMade";
+import DetailsModal from './DetailsModal';
 import UpdateHandMade from './UpdateHandMade';
-import { useHistory } from 'react-router-dom'; // Change from useNavigate to useHistory
+import { useHistory } from 'react-router-dom';
 import '../css/App.css';
 
 const HandMade = () => {
-  const history = useHistory(); // Change from useNavigate to useHistory
+  
   const [handmades, setHandmades] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
+
 
   useEffect(() => {
     axios.get('http://localhost:8080/handmade/getAll')
@@ -16,12 +18,12 @@ const HandMade = () => {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
-  const handleShowDetails = (handmade) => {
-    history.push(`/handmade/details/${handmade.id}`, { state: { data: handmade } });
-  };
-
   const handleAddHandmade = (newHandmade) => {
     setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
+  };
+
+  const handleShowDetails = (handmade) => {
+    setSelectedItem({ type: 'handmade', data: handmade });
   };
 
   const handleCloseModal = () => {
@@ -68,7 +70,9 @@ const HandMade = () => {
             onCancel={handleCloseModal}
             initialData={selectedItem.data}
           />
-        ) : null
+        ) : (
+          <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />
+        )
       )}
     </div>
   );

@@ -1,4 +1,3 @@
-
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -18,7 +17,7 @@ const SliderComponent = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000, 
+    autoplaySpeed: 2000,
   };
 
   return (
@@ -26,7 +25,7 @@ const SliderComponent = () => {
       <Slider {...settings}>
         {CarouselImages.map((image, index) => (
           <div key={index}>
-            <img src={image} alt={`Slide ${index + 1}`}  />
+            <img src={image} alt={`Slide ${index + 1}`} />
           </div>
         ))}
       </Slider>

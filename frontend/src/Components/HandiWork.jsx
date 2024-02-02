@@ -1,77 +1,54 @@
+// Handiwork.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddHandWork from './AddHandWork';
-import UpdateHandiwork from './UpdateHandiwork';
-import { useNavigate } from 'react-router-dom';
-import '../css/App.css';
+import HandWorkDetails from './HandWorkDetails';
+import DetailsModal from './DetailsModal';
 
-const HandWork = () => {
-  const navigate = useNavigate();
+function Handiwork() {
   const [handworkData, setHandworkData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:8080/handywork/GETALL')
       .then(response => {
-        setHandworkData(response.data);
+        setHandworkData(response.data)
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
-      });
+        console.error('Error fetching data:', error)
+      })
   }, []);
 
-  const handleShowDetails = (handiwork) => {
-    navigate(`/handiwork/details/${handiwork.id_Work}`, { state: { data: handiwork } });
-  };
-
   const handleAddHandWork = (newHandWork) => {
-    setHandworkData((prevHandworkData) => [...prevHandworkData, newHandWork])
+    setHandworkData((prevHandworkData) => [...prevHandworkData, newHandWork]);
   }
 
-  const handleUpdateClick = (handiwork) => {
-    setSelectedItem(handiwork);
+  const handleShowDetails = (handwork) => {
+    setSelectedItem({ type: 'handwork', data: handwork });
   };
 
-  const handleUpdateHandiwork = (updatedHandiwork) => {
-    setHandworkData((prevHandworkData) =>
-      prevHandworkData.map((handiwork) =>
-        handiwork.id_Work === updatedHandiwork.id_Work ? updatedHandiwork : handiwork
-      )
-    );
+  const handleCloseModal = () => {
     setSelectedItem(null);
-  };
-
-  const handleCancelUpdate = () => {
-    setSelectedItem(null);
-  };
+  }
 
   return (
-    <div className="full-screen-container">
+    <div className="cards-container">
       <AddHandWork onAddHandWork={handleAddHandWork} />
-      {handworkData.map(handiwork => (
-        <div key={handiwork.id_Work} className="card">
-          <img src={handiwork.image} alt="Handiwork" />
+      {handworkData.map(handwork => (
+        <div key={handwork.id_Work} className="card">
+          <img src={handwork.image} alt="Handiwork" />
           <div>
-            <button className="card-button" onClick={() => handleUpdateClick(handiwork)}>
-              Update
-            </button>
-            <div className="card-title">{handiwork.title}</div>
-            <div className="card-description">{handiwork.desc}</div>
-            <button className="card-button" onClick={() => handleShowDetails(handiwork)}>
+            <div className="card-title">{handwork.title}</div>
+            <div className="card-description">{handwork.desc}</div>
+            <button className="card-button" onClick={() => handleShowDetails(handwork)}>
               See more details
             </button>
           </div>
         </div>
       ))}
-      {selectedItem && (
-        <UpdateHandiwork
-          onUpdateHandiwork={handleUpdateHandiwork}
-          onCancel={handleCancelUpdate}
-          initialData={selectedItem}
-        />
-      )}
+      {selectedItem && <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />}
     </div>
   );
 }
 
-export default HandWork;
+export default Handiwork;
