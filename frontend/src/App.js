@@ -148,8 +148,9 @@ function App() {
         {view === 'Login' && <Login switchView={switchView} />}
         {view === 'Register' && <Register switchView={switchView} />}
         {view === 'About' && <AboutUs />}
-        <Homy/>
-        <Footer />
+        {view === 'Home' &&  <Homy/>}
+       
+       
 
 
         <ThemeProvider theme={theme}>

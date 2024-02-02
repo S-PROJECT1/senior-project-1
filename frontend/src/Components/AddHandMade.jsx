@@ -50,8 +50,14 @@ function AddHandMade({ onAddHandmade }) {
   };
 
   return (
-    <div>
-      <button onClick={handleOpenModal}>Add Handmade</button>
+    
+    <div className='add'>
+      <div className='welcome'> <h1>welcome to the lovely space</h1> </div>
+
+      <div className='button-one'>
+
+      <button onClick={handleOpenModal}>📝</button>
+      </div>
       {showModal && (
         <div className="modal">
           <div className="modal-content">

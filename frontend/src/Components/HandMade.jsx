@@ -57,7 +57,9 @@ function HandMade() {
 
   return (
     <div className="full-screen-container">
+
       <AddHandMade onAddHandmade={handleAddHandmade} />
+
       <div className="cards-container">
         {handmades.map(handmade => (
           <div key={handmade.id} className="card">
@@ -68,7 +70,7 @@ function HandMade() {
               <button className="card-button" onClick={() => handleShowDetails(handmade)}>
                 See more details
               </button>
-              <button className="card-button" onClick={() => handleUpdateClick(handmade)}>
+              <button className="card-button1" onClick={() => handleUpdateClick(handmade)}>
                 Update
               </button>
               <button className="card-button delete-button" onClick={() => handleDeleteClick(handmade.id)}>
