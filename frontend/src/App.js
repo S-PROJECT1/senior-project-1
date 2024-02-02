@@ -11,6 +11,7 @@ import Register from './Components/Register.jsx';
 import Login from './Components/login.jsx';
 // import { AuthContext, AuthProvider } from './context/AuthContext.js';
 import Footer from './Components/Footer.jsx';
+import Homy from './Components/Homy.jsx';
 
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
 
       <Navbar />
       {/* Conditionally render the Slider component only for the Home view */}
-      {view === 'Home' && <Slider />}
+      {view === 'Home' && <Slider /> }
 
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
         <div className="katha" onClick={toggleMenu}>
@@ -88,6 +89,7 @@ function App() {
 
 
         {view === 'About' && <AboutUs />}
+        <Homy/>
         <Footer />
 
       </div>
