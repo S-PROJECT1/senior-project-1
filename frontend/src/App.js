@@ -11,15 +11,10 @@ import Register from './Components/Register.jsx';
 import Login from './Components/login.jsx';
 // import { AuthContext, AuthProvider } from './context/AuthContext.js';
 import Footer from './Components/Footer.jsx';
+import Homy from './Components/Homy.jsx';
 import ChatBot from 'react-simple-chatbot'
 import { ThemeProvider } from 'styled-components';
-
-
-
-
 function App() {
-
-  console.log("hii")
   const [menuView, setMenuView] = useState(false);
   const [view, setView] = useState('Login');
   // const [curr, setcurr] = useState("login");
@@ -119,7 +114,7 @@ function App() {
 
       <Navbar />
       {/* Conditionally render the Slider component only for the Home view */}
-      {view === 'Home' && <Slider />}
+      {view === 'Home' && <Slider /> }
 
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
         <div className="katha" onClick={toggleMenu}>
@@ -153,6 +148,8 @@ function App() {
         {view === 'Login' && <Login switchView={switchView} />}
         {view === 'Register' && <Register switchView={switchView} />}
         {view === 'About' && <AboutUs />}
+        <Homy/>
+        <Footer />
 
         
         <ThemeProvider theme={theme}>
