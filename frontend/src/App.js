@@ -88,15 +88,11 @@ function App() {
 
 
         {view === 'About' && <AboutUs />}
-        <Footer/>
-      
+        <Footer />
+
       </div>
     </div>
   );
 }
 
 export default App;
-
-
-
-
