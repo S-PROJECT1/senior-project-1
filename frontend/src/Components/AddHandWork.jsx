@@ -83,3 +83,4 @@ function AddHandWork({ onAddHandWork }) {
 }
 
 export default AddHandWork;
+console.log('ameni')
