@@ -1,15 +1,14 @@
-
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import AddHandMade from "./AddHandMade"
-import HandMadeDetails from './HandMadeDetails'
-import DetailsModal from './DetailsModal'
-import UpdateHandMade from './UpdateHandMade'
-import '../css/App.css'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import AddHandMade from "./AddHandMade";
+import HandMadeDetails from './HandMadeDetails';
+import DetailsModal from './DetailsModal';
+import UpdateHandMade from './UpdateHandMade';
+import '../css/App.css';
 
 function HandMade() {
-  const [handmades, setHandmades] = useState([])
-  const [selectedItem, setSelectedItem] = useState(null)
+  const [handmades, setHandmades] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:8080/handmade/getAll')
@@ -46,6 +45,16 @@ function HandMade() {
     setSelectedItem(null);
   };
 
+  const handleDeleteClick = (id) => {
+    axios.delete(`http://localhost:8080/handmade//DELETE/${id}`)
+      .then(response => {
+        setHandmades((prevHandmades) => prevHandmades.filter(handmade => handmade.id !== id));
+      })
+      .catch(error => {
+        console.error('Error deleting handmade:', error);
+      });
+  };
+
   return (
     <div className="full-screen-container">
       <AddHandMade onAddHandmade={handleAddHandmade} />
@@ -61,6 +70,9 @@ function HandMade() {
               </button>
               <button className="card-button" onClick={() => handleUpdateClick(handmade)}>
                 Update
+              </button>
+              <button className="card-button delete-button" onClick={() => handleDeleteClick(handmade.id)}>
+                Delete
               </button>
             </div>
           </div>
