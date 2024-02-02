@@ -5,7 +5,7 @@ function AddHandWork({ onAddHandWork }) {
   const [formData, setFormData] = useState({
     image: '',
     title: '',
-    desc: '', 
+    desc: '',
     videos: '',
   });
 
@@ -27,7 +27,7 @@ function AddHandWork({ onAddHandWork }) {
         setFormData({
           image: '',
           title: '',
-          desc: '', // Corrected field name to match the server-side model
+          desc: '',
           videos: '',
         });
         setShowModal(false);
@@ -83,5 +83,4 @@ function AddHandWork({ onAddHandWork }) {
 }
 
 export default AddHandWork;
-
-
+console.log('ameni')

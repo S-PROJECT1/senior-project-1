@@ -15,6 +15,7 @@ const Register = (props) => {
             email: "",
             password: ""
       });
+      console.log("helllllllllllooooooooooooooooooooooooooooooooooooooooooo");
 
       const handleSubmit = (e) => {
             e.preventDefault(); // Correct the typo here

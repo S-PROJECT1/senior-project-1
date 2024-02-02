@@ -1,9 +1,8 @@
+// HandWorkDetails.js
 import React from 'react';
 import '../css/App.css';
 
-const HandWorkDetails = () => {
-  const { data } = window.history.state;
-
+const HandWorkDetails = ({ data, onBack }) => {
   return (
     <div className="details-container full-screen-details">
       <h2>{data.title}</h2>
@@ -13,6 +12,7 @@ const HandWorkDetails = () => {
         <source src={data.videos} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <button onClick={onBack}>Back</button>
     </div>
   );
 };

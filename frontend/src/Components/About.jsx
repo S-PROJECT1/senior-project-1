@@ -32,12 +32,12 @@ const AboutUs = () => {
 
 
 
-      <div className="about-details">
-        <div className="text-content">
+      <div className="about-details1">
+        <div className="text-content1">
           <h1>Our HandMade services :</h1>
           <p>In HandMade page you will discover our beautifull ways to make a lot of decorative things for your house with the lowest costs provided with videos that teach you how you can make it step by step . So make your house more beautifull & wonderfull with Us .</p>
         </div>
-        <div className="image-content">
+        <div className="image-content1">
           <img src="https://i5.walmartimages.com/asr/56566034-97e2-4a49-adfd-730bc363fc23.53529513a16f27fed7baae8fcf8519c7.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" alt="Our service" />
         </div>
       </div>
