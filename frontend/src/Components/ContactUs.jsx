@@ -10,7 +10,7 @@ export const ContactUs = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('bmahjuby@gmail.com', 'template_lqxwx99 ', form.current, 'ZOJy29MnumRolPded')
+    emailjs.sendForm('person@gmail.com', 'template_fl4e7v8 ', form.current, '2bsqtIq6pcWvij2Qo')
       .then((result) => {
         console.log(result.text);
         document.getElementById('success-alert').classList.add('show');
