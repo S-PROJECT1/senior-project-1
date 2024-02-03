@@ -9,19 +9,22 @@ import '../css/App.css';
 function HandMade() {
   const [handmades, setHandmades] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [refreshPage, setRefreshPage] = useState(false);
 
   useEffect(() => {
     axios.get('http://localhost:8080/handmade/getAll')
       .then(response => {
         setHandmades(response.data);
+        setRefreshPage(false); // Reset the refreshPage state
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [refreshPage]);
 
   const handleAddHandmade = (newHandmade) => {
     setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
+    setRefreshPage(true); // Trigger a page refresh after adding data
   };
 
   const handleShowDetails = (handmade) => {
@@ -58,7 +61,7 @@ function HandMade() {
   return (
     <div className="full-screen-container">
 
-      <AddHandMade onAddHandmade={handleAddHandmade} />
+      <AddHandMade onAddHandmade={handleAddHandmade} onAddSuccess={() => setRefreshPage(true)} />
 
       <div className="cards-container">
         {handmades.map(handmade => (
