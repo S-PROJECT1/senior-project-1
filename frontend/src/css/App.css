@@ -139,9 +139,12 @@ font-size: 35px;
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 20px;
+  justify-content:center;
+  margin: 100px;
+ margin-left: 9%;
+ margin-top: 2%;
 }
+
 
 .card {
   border: 1px solid #ccc;
@@ -150,11 +153,19 @@ font-size: 35px;
   width: 300px;
   margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+
 }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 250px;
+  border-radius: 5px;
   object-fit: cover;
 }
 
@@ -173,7 +184,7 @@ font-size: 35px;
 }
 
 .card-button {
-  background-color: #4caf50;
+  background-color: #027267;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -184,11 +195,34 @@ font-size: 35px;
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
+
 }
 
 .card-button:hover {
-  background-color: #45a049;
+  background-color: #0a9dc6;
 }
+
+.card-button1 {
+  background-color: #027267;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 15px;
+
+  
+}
+
+.card-button1:hover {
+  background-color: #0a9dc6;
+}
+
 
 /* Home-i-Think */
 .work {
@@ -222,44 +256,6 @@ border-radius:20px;
   margin: 20px;
 }
 
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.card-button {
-  margin-top: 10px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.card-button:hover {
-  background-color: #2980b9;
-}
 
 .modal {
   position: fixed;
@@ -324,10 +320,23 @@ border-radius:20px;
 }
 
 
-/* Chat.css */
-/* Add styles to your existing CSS file or create a new one */
-.rcw-widget-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+.button-one button{
+  font-size: 35px;
+  margin-left: 250%;
+  margin-top: 8%;
 }
+
+/* Add this CSS to your stylesheet */
+
+
+
+.welcome h1 {
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 57px;
+  padding: 30px 0;
+  background-color: #e3f8f7;
+  margin-bottom: 20px;
+
+  
+}
+/*hello*/

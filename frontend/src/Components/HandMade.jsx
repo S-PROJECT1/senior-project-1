@@ -10,6 +10,7 @@ import './HandMade.css';
 function HandMade() {
   const [handmades, setHandmades] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [refreshPage, setRefreshPage] = useState(false);
 
   useEffect(() => {
     // Load data from localStorage when the component mounts
@@ -27,7 +28,7 @@ function HandMade() {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [refreshPage]);
 
   const handleAddHandmade = (newHandmade) => {
     // Update state with the new handmade
@@ -75,7 +76,9 @@ function HandMade() {
 
   return (
     <div className="full-screen-container">
-      <AddHandMade onAddHandmade={handleAddHandmade} />
+
+      <AddHandMade onAddHandmade={handleAddHandmade} onAddSuccess={() => setRefreshPage(true)} />
+
       <div className="cards-container">
         {handmades.map(handmade => (
           <div key={handmade.id} className="card">
@@ -86,7 +89,7 @@ function HandMade() {
               <button className="card-button" onClick={() => handleShowDetails(handmade)}>
                 See more details
               </button>
-              <button className="card-button" onClick={() => handleUpdateClick(handmade)}>
+              <button className="card-button1" onClick={() => handleUpdateClick(handmade)}>
                 Update
               </button>
               <button className="card-button delete-button" onClick={() => handleDeleteClick(handmade.id)}>

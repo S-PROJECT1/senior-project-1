@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import "./LoginAndRegister.css";
 import Validation from "./SignInValidation.js"
 import axios from "axios"
@@ -14,17 +14,18 @@ const Register = (props) => {
             email: "",
             password: ""
       });
-      console.log("helllllllllllooooooooooooooooooooooooooooooooooooooooooo");
+
       const handleSubmit = (e) => {
             e.preventDefault();
             seterrors(Validation(values));
             if (errors.username === "" && errors.email === "" && errors.password === "") {
-              axios.post(`http://localhost:8080/user/add`, values)
-                .then(res => { props.switchView('Login') })
-                .catch(error => console.error('Error adding user:', error)); // Log the error here
+                  axios.post(`http://localhost:8080/user/add`, values)
+
+                        .then( props.switchView('Login') )
+                        .catch(error => console.error('Error adding user:', error)); // Log the error here
             }
-          }
-          
+      }
+
 
 
       const handleInput = (e) => {

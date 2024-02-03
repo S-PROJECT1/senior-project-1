@@ -10,20 +10,33 @@ const Handiwork = () => {
   const [handworkData, setHandworkData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [view, setView] = useState('main');
+  const [refreshPage, setRefreshPage] = useState(false); // New state variable
 
   useEffect(() => {
     axios.get('http://localhost:8080/handywork/GETALL')
       .then(response => {
         setHandworkData(response.data);
+        setRefreshPage(false); // Reset the refreshPage state
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [refreshPage]);
 
   const handleAddHandWork = (newHandWork) => {
-    setHandworkData((prevHandworkData) => [...prevHandworkData, newHandWork]);
+    axios.post('http://localhost:8080/handywork/add', newHandWork)
+      .then(response => {
+        setHandworkData((prevHandworkData) => [...prevHandworkData, response.data]);
+        setSelectedItem({ type: 'handiwork', data: response.data });
+        setRefreshPage(true); // Trigger a page refresh after adding data
+      })
+      .catch(error => {
+        console.error('Error adding handiwork:', error);
+      });
   };
+
+
+
 
   const handleUpdateClick = (handiwork) => {
     setSelectedItem({ type: 'update', data: handiwork });
@@ -62,7 +75,7 @@ const Handiwork = () => {
     <div className="full-screen-container">
       {view === 'main' && (
         <>
-          <AddHandWork onAddHandWork={handleAddHandWork} />
+          <AddHandWork onAddHandWork={handleAddHandWork} onAddSuccess={() => setRefreshPage(true)} />
           {handworkData.map(handiwork => (
             <div key={handiwork.id_Work} className="card">
               <img src={handiwork.image} alt="Handiwork" />
@@ -106,4 +119,3 @@ const Handiwork = () => {
 };
 
 export default Handiwork;
-console.log("first")

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
 import Navbar from './Components/Navbar';
@@ -14,6 +14,8 @@ import Footer from './Components/Footer.jsx';
 import Homy from './Components/Homy.jsx';
 import ChatBot from 'react-simple-chatbot'
 import { ThemeProvider } from 'styled-components';
+import { ContactUs } from './Components/ContactUs.jsx';
+
 function App() {
   const [menuView, setMenuView] = useState(false);
   const [view, setView] = useState('Login');
@@ -60,12 +62,12 @@ function App() {
       user: true,
       trigger: '4',
     },
-    
+
     {
       id: '4',
       message: ({ previousValue }) => {
         const lowerCaseInput = previousValue.toLowerCase();
-  
+
         if (lowerCaseInput.includes('handmade')) {
           switchView('HandMade');
           return 'You can find handmade items by clicking on "HandMade" in the sidebar.';
@@ -75,7 +77,7 @@ function App() {
         } else if (lowerCaseInput.includes('videos')) {
           return 'Yes, there are videos available. Click on a card to watch.';
         } else if (lowerCaseInput.includes('i love you')) {
-       
+
           return 'i love you too.';
         } else {
           return `I'm not sure how to help with that. Is there anything else you'd like to know?`;
@@ -84,27 +86,27 @@ function App() {
       trigger: '3',
     },
   ];
-  
-  
+
+
   // Creating our own theme
   const theme = {
-      background: '#fff',
-      headerBgColor: '#09605f',
-      headerFontSize: '20px',
-      botBubbleColor: '#0F3789',
-      headerFontColor: 'white',
-      botFontColor: 'white',
-      userBubbleColor: '#09605f',
-      userFontColor: 'white',
+    background: '#fff',
+    headerBgColor: '#09605f',
+    headerFontSize: '20px',
+    botBubbleColor: '#0F3789',
+    headerFontColor: 'white',
+    botFontColor: 'white',
+    userBubbleColor: '#09605f',
+    userFontColor: 'white',
   };
-   
+
   // Set some properties of the bot
   const config = {
-      // botAvatar: "img.png",
-      floating: true,
+    // botAvatar: "img.png",
+    floating: true,
   };
-   
- 
+
+
 
   return (
     <div>
@@ -114,7 +116,7 @@ function App() {
 
       <Navbar />
       {/* Conditionally render the Slider component only for the Home view */}
-      {view === 'Home' && <Slider /> }
+      {view === 'Home' && <Slider />}
 
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
         <div className="katha" onClick={toggleMenu}>
@@ -148,25 +150,27 @@ function App() {
         {view === 'Login' && <Login switchView={switchView} />}
         {view === 'Register' && <Register switchView={switchView} />}
         {view === 'About' && <AboutUs />}
-        <Homy/>
+        {view === 'Home' && <Homy />}
+        {view === 'Contact' && <ContactUs />}
+
+
+
+
+        <ThemeProvider theme={theme}>
+          <ChatBot
+
+            // This appears as the header
+            // text for the chat bot
+            headerTitle="ChatBot"
+            steps={steps}
+            {...config}
+
+          />
+        </ThemeProvider>
+
+
         <Footer />
 
-        
-        <ThemeProvider theme={theme}>
-                <ChatBot
- 
-                    // This appears as the header
-                    // text for the chat bot
-                    headerTitle="ChatBot"
-                    steps={steps}
-                    {...config}
- 
-                />
-            </ThemeProvider>
-  
-
-        <Footer/>
-      
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Modal, Button, Form } from 'react-bootstrap';
 
-function AddHandMade({ onAddHandmade }) {
+function AddHandMade({ onAddHandmade, onAddSuccess }) {
   const [formData, setFormData] = useState({
     img: '',
     title: '',
