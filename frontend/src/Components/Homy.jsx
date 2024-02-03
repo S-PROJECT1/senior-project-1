@@ -10,20 +10,15 @@ import p6 from './Assets/p6.jpg';
 
 
 
-
-
-
- const Homy = () => {
-  return (
-    <div>
-        <img  className="i1"src={p1} alt="" />
-        <img  className="i1"src={p2} alt="" />
-        <img className="i1"src={p3} alt="" />
-        <img className="i1"src={p4} alt="" />
-        <img className="i1"src={p5} alt="" />
-        <img className="i1"src={p6} alt="" />
-        </div>
-  )
+const Homy = () => {
+      return (
+            <div>
+                  <img className="i1" src={p1} alt="" />
+                  <img className="i1" src={p2} alt="" />
+                  <img className="i1" src={p3} alt="" />
+                  <img className="i1" src={p4} alt="" />
+                  <img className="i1" src={p5} alt="" />
+                  <img className="i1" src={p6} alt="" />
+            </div>
+      )
 }
-
-export default Homy
