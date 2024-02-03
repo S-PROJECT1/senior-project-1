@@ -23,6 +23,7 @@ app.use(express.json());
 
 
 // // check if the user is logged
+
 // const requireLogin = (req, res, next) => {
 //   if (req.session && req.session.user) {
 //     return next(); // proceed to the next if user is logged in
@@ -30,26 +31,30 @@ app.use(express.json());
 //     return res.status(401).json({ message: 'Access denied. Not logged in.' });
 //   }
 // };
+
 // jwt token middleware--------------------------------------------------------
+
 // const verifyToken = (req, res, next) => {
 //   const token = req.header('Authorization');
 //   if (!token) return res.status(401).json({ message: 'Access denied. No token provided.' });
 
-//   jwt.verify(token,process.env.JWT_SECRET,(err, decoded) => {
+//   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
 //     if (err) return res.status(401).json({ message: 'Invalid token.' });
 //     req.user = decoded;
 //     next();
 //   });
 // };
+
 // jwt token middleware--------------------------------------------------------
 
 // Apply session-based authentication middleware to specific routes
 // app.use("/user", requireLogin, route1);
 // app.use("/handmade", requireLogin, verifyToken, route2);
 // app.use("/handywork", requireLogin, verifyToken, route3);
+// 
 app.use("/user", route1);
 app.use("/handmade", route2);
-app.use("/handywork",  route3);
+app.use("/handywork", route3);
 
 
 
