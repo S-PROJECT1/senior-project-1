@@ -12,7 +12,8 @@ module.exports = {
     model.addUser(newUser, (err, results) => {
       if (err) {
         res.status(500).send(err);
-      } else {
+      }
+      else {
         const token = generateToken(results.insertId, newUser.username);
         res.json({ token });
       }
@@ -33,7 +34,8 @@ module.exports = {
 
         const token = generateToken(results[0].id, results[0].username);
         res.json({ token });
-      } else {
+      }
+      else {
         return res.json("fail");
       }
     });
