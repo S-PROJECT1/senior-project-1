@@ -14,6 +14,8 @@ import Footer from './Components/Footer.jsx';
 import Homy from './Components/Homy.jsx';
 import ChatBot from 'react-simple-chatbot'
 import { ThemeProvider } from 'styled-components';
+import { ContactUs } from './Components/ContactUs.jsx';
+
 function App() {
   const [menuView, setMenuView] = useState(false);
   const [view, setView] = useState('Login');
@@ -149,6 +151,7 @@ function App() {
         {view === 'Register' && <Register switchView={switchView} />}
         {view === 'About' && <AboutUs />}
         {view === 'Home' &&  <Homy/>}
+        {view === 'Contact' &&  <ContactUs/>}
        
        
 
