@@ -13,15 +13,9 @@ const HandWorkDetails = ({ data, onBack }) => {
       <img src={data.image} alt="Handiwork" />
       <p>{data.desc}</p>
       {data.videos ? (
-      <iframe
-      width="100%"
-      height="315"
-      src={data.videos}
-      title="YouTube Video"
-      frameborder="0"
-      allowfullscreen
-    ></iframe>
-    
+        <video controls width="100%">
+          <source src={data.videos} type="video/mp4" />
+        </video>
       ) : (
         <p>No video available</p>
       )}

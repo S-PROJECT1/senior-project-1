@@ -42,7 +42,7 @@
   z-index: 999;
 }
 .navbar {
-  background-color: transparent;
+  background-color:  #4e82a9;
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;

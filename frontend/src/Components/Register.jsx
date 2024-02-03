@@ -20,8 +20,7 @@ const Register = (props) => {
             seterrors(Validation(values));
             if (errors.username === "" && errors.email === "" && errors.password === "") {
                   axios.post(`http://localhost:8080/user/add`, values)
-
-                        .then( props.switchView('Login') )
+                        .then(res => { props.switchView('Login') })
                         .catch(error => console.error('Error adding user:', error)); // Log the error here
             }
       }
