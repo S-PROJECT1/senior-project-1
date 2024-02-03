@@ -17,6 +17,7 @@ import { ThemeProvider } from 'styled-components';
 import { ContactUs } from './Components/ContactUs.jsx';
 
 function App() {
+  
   const [menuView, setMenuView] = useState(false);
   const [view, setView] = useState('Login');
   // const [curr, setcurr] = useState("login");
@@ -105,6 +106,7 @@ function App() {
     // botAvatar: "img.png",
     floating: true,
   };
+
 
 
 

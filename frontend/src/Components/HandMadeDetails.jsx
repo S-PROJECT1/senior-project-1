@@ -7,7 +7,7 @@ const HandMadeDetails = ({ data, onBack }) => {
     <div className="details-container full-screen-details">
       <h2>{data.title}</h2>
       <img src={data.img} alt="Handmade" />
-      <p>{data.desc}</p>
+      <p>{data.description}</p>
       <video controls width="100%">
         <source src={data.video} type="video/mp4" />
         Your browser does not support the video tag.

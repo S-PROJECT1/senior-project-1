@@ -9,6 +9,7 @@ import '../css/App.css';
 function HandMade() {
   const [handmades, setHandmades] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [view, setView] = useState('main');
   const [refreshPage, setRefreshPage] = useState(false);
 
   useEffect(() => {
@@ -83,6 +84,12 @@ function HandMade() {
           </div>
         ))}
       </div>
+      {view === 'details' && selectedItem && (
+        <HandMadeDetails
+          data={selectedItem.data}
+          onBack={() => setView('main')}
+        />
+      )}
       {selectedItem && (
         selectedItem.type === 'handmade' ? (
           <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />
