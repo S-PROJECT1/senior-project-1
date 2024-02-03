@@ -33,6 +33,7 @@ function HandMade() {
     setSelectedItem({ type: 'handmade', data: handmade });
     setView('details'); 
   };
+  
 
   const handleCloseModal = () => {
     setSelectedItem(null);
