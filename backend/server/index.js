@@ -22,7 +22,7 @@ app.use(express.json());
 
 
 
-// // check if the user is logged 
+// // check if the user is logged
 // const requireLogin = (req, res, next) => {
 //   if (req.session && req.session.user) {
 //     return next(); // proceed to the next if user is logged in
