@@ -1,4 +1,4 @@
-/* .navbar {
+.navbar {
   background: #09605f;
   padding: 30px;
   color: white;
@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   height: 16px;
-} */
+}
 
 /* .logo {
       font-size: 1.5rem;
@@ -42,7 +42,7 @@
   z-index: 999;
 }
 .navbar {
-  background-color:  #4e82a9;
+  background-color: transparent;
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;

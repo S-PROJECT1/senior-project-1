@@ -4,8 +4,6 @@ import SearchComponent from './SearchComponent';
 
 const Navbar = ({ view }) => {
   return (
-    <div className="stic">
-      <div className="Header">
         <nav className="navbar">
           <div className="logo">Your Logo</div>
           {view !== 'Login' && (
@@ -14,8 +12,6 @@ const Navbar = ({ view }) => {
             </ul>
           )}
         </nav>
-      </div>
-    </div>
   );
 };
 
