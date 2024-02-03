@@ -1,29 +1,22 @@
-// HandMade.jsx
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddHandMade from "./AddHandMade";
+import HandMadeDetails from './HandMadeDetails';
 import DetailsModal from './DetailsModal';
 import UpdateHandMade from './UpdateHandMade';
-import './HandMade.css';
+import '../css/App.css';
 
 function HandMade() {
   const [handmades, setHandmades] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [view, setView] = useState('main');
   const [refreshPage, setRefreshPage] = useState(false);
 
   useEffect(() => {
-    // Load data from localStorage when the component mounts
-    const storedData = JSON.parse(localStorage.getItem('handmades')) || [];
-    setHandmades(storedData);
-
-    // Fetch data from the server
     axios.get('http://localhost:8080/handmade/getAll')
       .then(response => {
         setHandmades(response.data);
-
-        // Save data to localStorage after fetching from the server
-        localStorage.setItem('handmades', JSON.stringify(response.data));
+        setRefreshPage(false); // Reset the refreshPage state
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -31,11 +24,8 @@ function HandMade() {
   }, [refreshPage]);
 
   const handleAddHandmade = (newHandmade) => {
-    // Update state with the new handmade
     setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
-
-    // Save the updated data to localStorage
-    localStorage.setItem('handmades', JSON.stringify([...handmades, newHandmade]));
+    setRefreshPage(true); // Trigger a page refresh after adding data
   };
 
   const handleShowDetails = (handmade) => {
@@ -57,17 +47,12 @@ function HandMade() {
       )
     );
     setSelectedItem(null);
-
-    // Save the updated data to localStorage
-    localStorage.setItem('handmades', JSON.stringify([...handmades]));
   };
 
   const handleDeleteClick = (handmadeId) => {
     axios.delete(`http://localhost:8080/handmade/delete/${handmadeId}`)
       .then(response => {
         setHandmades((prevHandmades) => prevHandmades.filter(handmade => handmade.id !== handmadeId));
-        // Save the updated data to localStorage
-        localStorage.setItem('handmades', JSON.stringify([...handmades]));
       })
       .catch(error => {
         console.error('Error deleting handmade:', error);
@@ -85,7 +70,7 @@ function HandMade() {
             <img src={handmade.img} alt="Handmade" />
             <div>
               <div className="card-title">{handmade.title}</div>
-              <div className="card-description">{handmade.description}</div>
+              <div className="card-description">{handmade.desc}</div>
               <button className="card-button" onClick={() => handleShowDetails(handmade)}>
                 See more details
               </button>
@@ -99,6 +84,12 @@ function HandMade() {
           </div>
         ))}
       </div>
+      {view === 'details' && selectedItem && (
+        <HandMadeDetails
+          data={selectedItem.data}
+          onBack={() => setView('main')}
+        />
+      )}
       {selectedItem && (
         selectedItem.type === 'handmade' ? (
           <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />

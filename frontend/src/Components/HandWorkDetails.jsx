@@ -1,4 +1,3 @@
-// HandWorkDetails.js
 import React from 'react';
 import '../css/App.css';
 
@@ -10,9 +9,8 @@ const HandWorkDetails = ({ data, onBack }) => {
       <p>{data.desc}</p>
       <video controls width="100%">
         <source src={data.videos} type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
-      <button onClick={onBack}>Back</button>
+      <button onClick={onBack}>Back To handiwork</button>
     </div>
   );
 };
