@@ -112,37 +112,34 @@ function App() {
 
   return (
     <div>
-
-
-      {/* {userToken !== null ? <Slider /> : <Login />} */}
-
       <Navbar />
-      {/* Conditionally render the Slider component only for the Home view */}
       {view === 'Home' && <Slider />}
 
-      <div className={`sidebar ${menuView ? 'active' : ''}`}>
-        <div className="katha" onClick={toggleMenu}>
-          ☰
+      {view !== 'Login' && (
+        <div className={`sidebar ${menuView ? 'active' : ''}`}>
+          <div className="katha" onClick={toggleMenu}>
+            ☰
+          </div>
+          <span className="items" onClick={() => switchView('Home')}>
+            <AiFillHome className="icon" /> Home
+          </span>
+          <span className="items" onClick={() => switchView('Handiwork')}>
+            <FaTools className="icon" /> Handiwork
+          </span>
+          <span className="items" onClick={() => switchView('HandMade')}>
+            <FaHandPaper className="icon" /> HandMade
+          </span>
+          <span className="items" onClick={() => switchView('About')}>
+            <AiFillPhone className="icon" /> About
+          </span>
+          <span className="items" onClick={() => switchView('Contact')}>
+            <AiFillPlusCircle className="icon" /> Contact
+          </span>
+          <span className="items" onClick={() => switchView('Login')}>
+            <AiFillPlusCircle className="icon" /> Login
+          </span>
         </div>
-        <span className="items" onClick={() => switchView('Home')}>
-          <AiFillHome className="icon" /> Home
-        </span>
-        <span className="items" onClick={() => switchView('Handiwork')}>
-          <FaTools className="icon" /> Handiwork
-        </span>
-        <span className="items" onClick={() => switchView('HandMade')}>
-          <FaHandPaper className="icon" /> HandMade
-        </span>
-        <span className="items" onClick={() => switchView('About')}>
-          <AiFillPhone className="icon" /> About
-        </span>
-        <span className="items" onClick={() => switchView('Contact')}>
-          <AiFillPlusCircle className="icon" /> Contact
-        </span>
-        <span className="items" onClick={() => switchView('Login')}>
-          <AiFillPlusCircle className="icon" /> Login
-        </span>
-      </div>
+      )}
       <div className={`container ${menuView ? 'active' : ''}`}>
 
 
