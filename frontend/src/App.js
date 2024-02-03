@@ -116,7 +116,7 @@ function App() {
 
       <Navbar />
       {/* Conditionally render the Slider component only for the Home view */}
-      {view === 'Home' && <Slider /> }
+      {view === 'Home' && <Slider />}
 
       <div className={`sidebar ${menuView ? 'active' : ''}`}>
         <div className="katha" onClick={toggleMenu}>
@@ -150,10 +150,10 @@ function App() {
         {view === 'Login' && <Login switchView={switchView} />}
         {view === 'Register' && <Register switchView={switchView} />}
         {view === 'About' && <AboutUs />}
-        {view === 'Home' &&  <Homy/>}
-        {view === 'Contact' &&  <ContactUs/>}
-       
-       
+        {view === 'Home' && <Homy />}
+        {view === 'Contact' && <ContactUs />}
+
+
 
 
         <ThemeProvider theme={theme}>
