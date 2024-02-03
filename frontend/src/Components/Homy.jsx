@@ -22,3 +22,5 @@ const Homy = () => {
             </div>
       )
 }
+
+export default Homy
