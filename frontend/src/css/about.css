@@ -1,7 +1,7 @@
 .about-us .header {
     text-align: center;
     padding: 50px 0;
-    background-color: #e3f8f7;
+    background-color: #bfddf8;
   }
   
   .about-us h1 {
@@ -17,7 +17,7 @@
   }
   
   .get-started-button {
-    background-color: #333;
+    background-color: #bfddf8;
     color: #fff;
     border: none;
     padding: 15px 30px;
@@ -68,7 +68,7 @@
   .service {
     text-align: center;
     padding: 50px 0;
-    background-color: rgb(96, 165, 150);
+    background-color: rgb(115, 144, 175);
     margin-top: 5%;
     width :80%;
     margin-left: 10%;
@@ -115,7 +115,7 @@
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
-    background-color: rgb(246, 248, 227);
+    background-color: rgb(208, 212, 172);
     width :80%;
     margin-left: 15%;
     margin-top: 5%;

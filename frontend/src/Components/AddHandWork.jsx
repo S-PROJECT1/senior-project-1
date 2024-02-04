@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import home3 from './Assets/home3.png'
 
-function AddHandWork({ onAddHandWork }) {
+function AddHandWork({ onAddHandWork, onAddSuccess }) {
   const [formData, setFormData] = useState({
     image: '',
     title: '',
@@ -21,7 +22,7 @@ function AddHandWork({ onAddHandWork }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8080/handywork/create', formData)
+    axios.post('http://localhost:8080/handywork/add', formData)
       .then(response => {
         onAddHandWork(response.data);
         setFormData({
@@ -31,12 +32,13 @@ function AddHandWork({ onAddHandWork }) {
           videos: '',
         });
         setShowModal(false);
+        // Notify the parent component about the successful addition
+        onAddSuccess();
       })
       .catch(error => {
         console.error('Error adding handwork:', error);
       });
   };
-
   const handleOpenModal = () => {
     setShowModal(true);
   };
@@ -46,8 +48,12 @@ function AddHandWork({ onAddHandWork }) {
   };
 
   return (
-    <div>
-      <button onClick={handleOpenModal}>Add Handwork</button>
+    <div >
+      <div className='welc'> <img src={home3}/> </div>
+
+      <div className='button-two'>
+      <button onClick={handleOpenModal}>📝</button>
+      </div>
       {showModal && (
         <div className="modal">
           <div className="modal-content">
@@ -83,4 +89,3 @@ function AddHandWork({ onAddHandWork }) {
 }
 
 export default AddHandWork;
-console.log('ameni')
