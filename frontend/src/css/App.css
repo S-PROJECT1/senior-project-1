@@ -253,7 +253,9 @@ border-radius:20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 20px;
+  margin: 0px;
+  position: relative;
+  top: 80px;
 }
 
 
@@ -339,4 +341,4 @@ border-radius:20px;
 
   
 }
-/*hello*/
+/*  */

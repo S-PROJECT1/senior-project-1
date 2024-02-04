@@ -136,7 +136,7 @@ function App() {
             <AiFillPlusCircle className="icon" /> Contact
           </span>
           <span className="items" onClick={() => switchView('Login')}>
-            <AiFillPlusCircle className="icon" /> Login
+            <AiFillPlusCircle className="icon" /> Log Out
           </span>
         </div>
       )}
