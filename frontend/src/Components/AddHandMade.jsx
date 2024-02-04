@@ -4,7 +4,7 @@ import "../css/App.css"
 import home2 from './Assets/home2.png'
 
 
-function AddHandMade({ onAddHandmade, onAddSuccess }) {
+function AddHandMade({ onAddHandmade, onAddSuccess, view }) {
   const [formData, setFormData] = useState({
     img: '',
     title: '',
@@ -51,7 +51,9 @@ function AddHandMade({ onAddHandmade, onAddSuccess }) {
 
   return (
     <div className='add'>
-      <div className='welcome'> <img src={home2}/> </div>
+      {view !== 'details' && (
+        <div className='welcome'> <img src={home2} /> </div>
+      )}
 
       <div className='button-one'>
         <button onClick={handleOpenModal}>📝</button>

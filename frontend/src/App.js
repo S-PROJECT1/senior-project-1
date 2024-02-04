@@ -91,12 +91,12 @@ function App() {
   // Creating our own theme
   const theme = {
     background: '#fff',
-    headerBgColor: '#3d9dc9',
+    headerBgColor: '#09605f',
     headerFontSize: '20px',
     botBubbleColor: '#0F3789',
     headerFontColor: 'white',
     botFontColor: 'white',
-    userBubbleColor: '#3d9dc9',
+    userBubbleColor: '#09605f',
     userFontColor: 'white',
   };
 
@@ -142,7 +142,7 @@ function App() {
 
 
         {view === 'Handiwork' && <Handiwork />}
-        {view === 'HandMade' && <HandMade  />}
+        {view === 'HandMade' && <HandMade />}
         {view === 'Login' && <Login switchView={switchView} />}
         {view === 'Register' && <Register switchView={switchView} />}
         {view === 'About' && <AboutUs />}
