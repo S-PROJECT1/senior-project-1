@@ -62,28 +62,33 @@ function AddHandMade({ onAddHandmade, onAddSuccess }) {
           <div className="modal">
             <span className="close" onClick={handleCloseModal}>&times;</span>
             <form onSubmit={handleSubmit}>
-              <label>
-                Image URL:
-                <input type="text" name="img" value={formData.img} onChange={handleInputChange} />
-              </label>
-              <br />
-              <label>
-                Title:
-                <input type="text" name="title" value={formData.title} onChange={handleInputChange} />
-              </label>
-              <br />
-              <label>
-                Description:
-                <input type="text" name="description" value={formData.description} onChange={handleInputChange} />
-              </label>
-              <br />
-              <label>
-                Video URL:
-                <input type="text" name="video" value={formData.video} onChange={handleInputChange} />
-              </label>
-              <br />
-              <button className='add-handmade' type="submit">Add Handmade</button>
-            </form>
+  <label>
+    Image URL:
+    <br />
+    <input type="text" name="img" value={formData.img} onChange={handleInputChange} />
+  </label>
+
+  <label>
+    Title:
+    <br />
+    <input type="text" name="title" value={formData.title} onChange={handleInputChange} />
+  </label>
+
+  <label>
+    Description:
+    <br />
+    <input type="text" name="description" value={formData.description} onChange={handleInputChange} />
+  </label>
+
+  <label>
+    Video URL:
+    <br />
+    <input type="text" name="video" value={formData.video} onChange={handleInputChange} />
+  </label>
+
+  <button className='add-handmade-button' type="submit">Add Handmade</button>
+</form>
+
           </div>
         </div>
       )}
