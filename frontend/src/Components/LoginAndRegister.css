@@ -3,26 +3,28 @@
 .login-and-signin-container {
       max-width: 392px;
       margin: 0 auto;
-      padding: 20px;
-      background-color: #f4f4f4;
+      padding: 30px;
+      background-color:transparent;
       border: 1px solid #ccc;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       position: relative;
       top: 200px;
-      height: 318px;
+      height: 470px;
       margin-bottom: 450px;
 }
 
 .login-and-signin-container label {
       display: block;
       margin-bottom: 10px;
+      font-size: 20px;
+     
 }
 
 .login-and-signin-container input {
       width: 96%;
       padding: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 55px;
       border: 1px solid #ccc;
       border-radius: 4px;
 }
@@ -30,8 +32,8 @@
 .login-and-signin {
       width: 39%;
       padding: 12px;
-      background-color: #3498db;
-      color: #fff;
+      background-color: #3d9dc9;
+      color: #060606;
       border: none;
       border-radius: 4px;
       cursor: pointer;
@@ -39,10 +41,11 @@
       transition: background-color 0.3s;
       position: relative;
       left: 117px;
+      
 }
 
 .login-and-signin:hover {
-      background-color: #007bb5;
+      background-color: #c3b76e;
 }
 
 
@@ -75,16 +78,17 @@
 /* ---------------------------------------- */
 
 .signin-container {
-      max-width: 408px;
+      max-width: 392px;
       margin: 0 auto;
-      padding: 20px;
-      background-color: #f4f4f4;
+      padding: 30px;
+      background-color:transparent;
       border: 1px solid #ccc;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       position: relative;
-      top: 61px;
-      height: 404px;
+      top: 200px;
+      height: 470px;
+      margin-bottom: 450px;
 }
 
 .signin-container label {
@@ -92,6 +96,8 @@
       margin-bottom: 10px;
       position: relative;
       bottom: 13px;
+      font-size: 20px;
+
 }
 
 .signin-container input {
@@ -106,8 +112,8 @@
 .signin {
       width: 39%;
       padding: 12px;
-      background-color: #3498db;
-      color: #fff;
+      background-color: #3893b7;
+      color: #000000;
       border: none;
       border-radius: 4px;
       cursor: pointer;
@@ -119,7 +125,7 @@
   }
 
 .signin:hover {
-      background-color: #007bb5;
+      background-color: #c3b76e;
 }
 
 

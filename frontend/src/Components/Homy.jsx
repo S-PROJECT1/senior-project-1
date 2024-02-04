@@ -12,7 +12,7 @@ import pp3 from './Assets/pp3.jpg'
 import pp4 from './Assets/pp4.webp'
 import pp5 from './Assets/pp5.webp'
 import pp6 from './Assets/pp6.jpg'
-
+import desc from './Assets/desc.png'
 
 
 
@@ -41,8 +41,22 @@ import pp6 from './Assets/pp6.jpg'
   <img className="i2" src={pp6} alt="" />
 </div>
 
+<div className='a'>
+<h1>Welcome To Our Space</h1>
+  <p>
+Here you will find an ever-changing selection of work from scratch. We regularily add new work, so be sure to check in often. If you don't find what you're looking for, feel free to give us a call or email.</p>
+</div>
+
+<div className='des'>
+  <img src="https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg"/>
+</div>
+<div className='desc'>
+  <img src={desc}/>
+</div>
+
 
 </div>
+
   )
 
  }
