@@ -35,6 +35,13 @@ app.get('/', (req, res) => {
   res.send('Server Listening');
 });
 
+// search
+app.get('/handmade/getbytitle/:searchTerm', (req, res) => {
+  const searchTerm = req.params.searchTerm.toLowerCase();
+  const results = //nameOfData.filter(item => item.title.toLowerCase().includes(searchTerm));
+  res.json(results);
+});
+
 
 
 // app.get('/login', (req, res) => {
