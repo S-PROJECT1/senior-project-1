@@ -8,6 +8,7 @@ const Register = (props) => {
       // const [pass, setPass] = useState("");
       // const [name, setName] = useState("");
       // // const { login } = useContext(AuthContext)
+      console.log("helllllllllllooooooooooo");
       const [errors, seterrors] = useState({})
       const [values, setvalues] = useState({
             username: "",
