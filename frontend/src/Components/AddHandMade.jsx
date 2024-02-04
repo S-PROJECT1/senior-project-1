@@ -3,6 +3,7 @@ import axios from 'axios';
 import "../css/App.css"
 import home2 from './Assets/home2.png'
 
+
 function AddHandMade({ onAddHandmade, onAddSuccess }) {
   const [formData, setFormData] = useState({
     img: '',
@@ -55,9 +56,10 @@ function AddHandMade({ onAddHandmade, onAddSuccess }) {
       <div className='button-one'>
         <button onClick={handleOpenModal}>📝</button>
       </div>
+
       {showModal && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modal-background">
+          <div className="modal">
             <span className="close" onClick={handleCloseModal}>&times;</span>
             <form onSubmit={handleSubmit}>
               <label>
