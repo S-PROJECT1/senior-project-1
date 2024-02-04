@@ -13,11 +13,7 @@ const HandWorkDetails = ({ data, onBack }) => {
       <h2>{data.title}</h2>
       <img src={data.image} alt="Handiwork" />
       <p>{data.desc}</p>
-      {data.videos ? (
-        <YouTube videoId={data.videos} />
-      ) : (
-        <p>No video available</p>
-      )}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/unKU1aFzxUQ?si=57QqmsOfofdtew6f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <button onClick={onBack}>Back To handiwork</button>
     </div>
   );
