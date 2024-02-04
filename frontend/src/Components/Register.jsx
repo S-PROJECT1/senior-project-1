@@ -8,7 +8,6 @@ const Register = (props) => {
       // const [pass, setPass] = useState("");
       // const [name, setName] = useState("");
       // // const { login } = useContext(AuthContext)
-      console.log("helllllllllllooooooooooo");
       const [errors, seterrors] = useState({})
       const [values, setvalues] = useState({
             username: "",
@@ -35,7 +34,7 @@ const Register = (props) => {
 
 
       return (
-            <div className='signin-container' action='' onSubmit={handleSubmit}>
+            <form className='signin-container' action='' onSubmit={handleSubmit}>
                   <label>
                         <p>Username</p>
                         <input onChange={handleInput} type="text" name="username" placeholder="Enter username" />
@@ -53,7 +52,7 @@ const Register = (props) => {
                   </label>
                   <button type='submit' className='signin'  >Sign In</button>
                   <button onClick={() => props.switchView('Login')} className='change-view-signin'>Have An Account? Log In</button>
-            </div>
+            </form>
 
       );
 }
