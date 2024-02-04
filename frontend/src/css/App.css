@@ -17,7 +17,6 @@ body {
 
 .nav:hover {
   background-color: #34495e;
-
 }
 
 .items {
@@ -28,17 +27,13 @@ body {
   align-items: center;
   color: #000000;
   font-size: 21px;
-
 }
-
 
 .items:hover {
   color: #74cdc5;
   text-decoration: underline;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  /* Add a subtle box-shadow on hover */
   border-radius: 4px;
-  /* Add border-radius on hover */
 }
 
 .sidebar {
@@ -60,10 +55,7 @@ body {
 
 .icon {
   margin-right: 6px;
-  /* Adjust the margin for icon spacing */
 }
-
-
 
 .container:hover {
   margin-left: 0;
@@ -134,8 +126,6 @@ body {
   font-weight: 700;
 }
 
-
-
 /* diffrent-cards ----------------------------------- */
 
 .cards-container {
@@ -147,7 +137,6 @@ body {
   margin-top: 0%;
 }
 
-
 .card {
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -156,13 +145,11 @@ body {
   margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-
 }
 
 .card:hover {
   transform: scale(1.05);
 }
-
 
 .card img {
   width: 100%;
@@ -185,25 +172,7 @@ body {
   font-size: 0.9rem;
 }
 
-.card-button {
-  background-color: #088da5;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-
-}
-
-.card-button:hover {
-  background-color: #0a9dc6;
-}
-
+.card-button,
 .card-button1 {
   background-color: #088da5;
   color: white;
@@ -216,15 +185,12 @@ body {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
-  margin-left: 15px;
-
-
 }
 
+.card-button:hover,
 .card-button1:hover {
   background-color: #0a9dc6;
 }
-
 
 .welcome h1 {
   font-family: Brush Script MT, Brush Script Std, cursive;
@@ -232,20 +198,14 @@ body {
   padding: 30px 0;
   background-color: #e3f8f7;
   margin-bottom: 20px;
-
-
 }
-
 
 .button-two button {
   font-size: 35px;
   position: fixed;
   top: 20%;
-  /* Adjust the top position as needed */
   right: 2%;
-  /* Adjust the right position as needed */
 }
-
 
 /* Home-i-Think */
 .work {
@@ -253,7 +213,6 @@ body {
   left: 500px;
   font-size: bold;
 }
-
 
 .slider {
   margin-top: 5%;
@@ -264,14 +223,11 @@ body {
   margin-bottom: 2%;
 }
 
-
 .slider img {
-
   width: 100%;
   height: 600px;
   border-radius: 20px;
 }
-
 
 .full-screen-container {
   display: flex;
@@ -281,74 +237,6 @@ body {
   position: relative;
   top: 80px;
 }
-
-
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.full-screen-details {
-  width: 80vw;
-  max-width: 600px;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  position: relative;
-  left: -50px;
-}
-
-.full-screen-details img {
-  max-width: 100%;
-  max-height: 60vh;
-  object-fit: contain;
-  border-radius: 5px;
-}
-
-.full-screen-details p {
-  margin: 10px 0;
-}
-
-/* Responsive */
-@media screen and (max-width: 600px) {
-  .full-screen-details {
-    width: 90vw;
-  }
-
-  .card {
-    width: calc(100% - 20px);
-  }
-}
-
-
-.button-one button {
-  font-size: 35px;
-  position: fixed;
-  top: 20%;
-  /* Adjust the top position as needed */
-  right: 2%;
-  /* Adjust the right position as needed */
-}
-
-
-
-
-/*hello*/
 
 .modal-background {
   position: fixed;
@@ -360,7 +248,6 @@ body {
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(5px);
-  /* Blur effect */
 }
 
 .modal-content {
@@ -370,9 +257,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
-  /* Add other styling as needed */
 }
-
 
 .modal {
   position: relative;
@@ -383,7 +268,6 @@ body {
   padding: 20px;
   background-color: white;
   z-index: 2;
-  /* Ensure it's above the backdrop */
 }
 
 .close {
@@ -392,7 +276,6 @@ body {
   right: 10px;
   cursor: pointer;
   padding: 10%;
-
 }
 
 .modal form {
@@ -408,7 +291,6 @@ body {
 .modal form input {
   padding: 8px;
   margin-bottom: 10px;
-  /* Add other styling as needed */
 }
 
 .add-handmade-button {
@@ -431,31 +313,97 @@ body {
 .welc img {
   width: 60%;
   height: 30%;
-  /* margin-top: 1%; */
   margin-bottom: 0.5%;
   margin-left: 20%;
 }
 
-.modal-background {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* HandWorkDetails component styles */
+
+.details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.full-screen-details {
+  width: 80vw;
+  max-width: 600px;
+  min-height: 80vh;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.full-screen-details img {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.full-screen-details p {
+  margin: 10px 0;
+}
+
+.details-container form {
+  display: flex;
+  gap: 10px;
+}
+
+.details-container form input#input {
+  padding: 10px;
+  margin-top: 10px;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  /* Semi-transparent black background */
-  backdrop-filter: blur(5px);
-  /* Blur effect */
-  z-index: 1;
-  /* Ensure it's above other elements */
+  font-size: 16px;
 }
 
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.details-container form button#bu,
+.details-container form button#bu1 {
+  background-color: #088da5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
-/* Add your other styles as needed */
+.details-container form button#bu:hover,
+.details-container form button#bu1:hover {
+  background-color: #0a9dc6;
+}
+
+#bu1 {
+  background-color: #088da5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .full-screen-details {
+    width: 90vw;
+  }
+}

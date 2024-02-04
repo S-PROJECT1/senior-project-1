@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/App.css';
+// ... (existing imports)
 
 const HandMadeDetails = ({ data, onBack }) => {
+  const [comments, setComments] = useState([]);
+  const [likes, setLikes] = useState(0);
+
   if (!data) {
     return null;
   }
@@ -9,6 +13,14 @@ const HandMadeDetails = ({ data, onBack }) => {
   const { title, img, description, video } = data;
 
   const videoId = getYouTubeVideoId(video);
+
+  const handleCommentSubmit = (comment) => {
+    setComments((prevComments) => [...prevComments, comment]);
+  };
+
+  const handleLikeClick = () => {
+    setLikes((prevLikes) => prevLikes + 1);
+  };
 
   return (
     <div className="details-container full-screen-details">
@@ -24,7 +36,28 @@ const HandMadeDetails = ({ data, onBack }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
-      <button onClick={onBack}>Back</button>
+      <div>
+        {/* Comment section */}
+        <div>
+          <ul>
+            {comments.map((comment, index) => (
+              <li key={index}>{comment}</li>
+            ))}
+          </ul>
+          {/* Form to submit a new comment */}
+          <form onSubmit={(e) => { e.preventDefault(); handleCommentSubmit(e.target.comment.value); }}>
+            <input id="input" type="text" name="comment" placeholder="Add a comment" />
+            <button id="bu" type="submit">Post Comment</button>
+          </form>
+        </div>
+      </div>
+
+      {/* Like button */}
+      <div>
+        <button id="bu1" onClick={handleLikeClick}>Like ({likes})</button>
+      </div>
+
+      <button id="bu1" onClick={onBack}>Back To handmade</button>
     </div>
   );
 };
@@ -36,4 +69,6 @@ function getYouTubeVideoId(url) {
 }
 
 export default HandMadeDetails;
+
+
 
