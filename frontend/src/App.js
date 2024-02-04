@@ -14,7 +14,6 @@ import Footer from './Components/Footer.jsx';
 import Homy from './Components/Homy.jsx';
 import ChatBot from 'react-simple-chatbot'
 import { ThemeProvider } from 'styled-components';
-import { ContactUs } from './Components/ContactUs.jsx';
 
 function App() {
 
@@ -132,9 +131,7 @@ function App() {
           <span className="items" onClick={() => switchView('About')}>
             <AiFillPhone className="icon" /> About
           </span>
-          <span className="items" onClick={() => switchView('Contact')}>
-            <AiFillPlusCircle className="icon" /> Contact
-          </span>
+         
           <span className="items" onClick={() => switchView('Login')}>
             <AiFillPlusCircle className="icon" /> Log Out
           </span>
@@ -150,7 +147,6 @@ function App() {
         {view === 'Register' && <Register switchView={switchView} />}
         {view === 'About' && <AboutUs />}
         {view === 'Home' && <Homy />}
-        {view === 'Contact' && <ContactUs />}
 
 
 
