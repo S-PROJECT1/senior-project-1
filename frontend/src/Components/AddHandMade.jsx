@@ -23,21 +23,16 @@ function AddHandMade({ onAddHandmade, onAddSuccess }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Send a POST request to add the handmade
     axios.post('http://localhost:8080/handmade/add', formData)
       .then(response => {
-        // Update the parent component's state with the new handmade
         onAddHandmade(response.data);
-        // Optionally, you can reset the form data
         setFormData({
           img: '',
           title: '',
           description: '',
           video: '',
         });
-        // Close the modal after submission
         setShowModal(false);
-        // Notify the parent component about the successful addition
         onAddSuccess();
       })
       .catch(error => {

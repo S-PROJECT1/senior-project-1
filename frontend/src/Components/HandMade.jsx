@@ -1,4 +1,3 @@
-// HandMade.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddHandMade from "./AddHandMade";
@@ -56,12 +55,12 @@ function HandMade() {
 
   const handleShowDetails = (handmade) => {
     setSelectedItem({ type: 'handmade', data: handmade });
-    setView('details');  // Set the view to 'details'
+    setView('details');  
   };
 
   const handleCloseModal = () => {
     setSelectedItem(null);
-    setView('main');  // Reset the view to 'main'
+    setView('main');  
   };
 
   const handleUpdateClick = (handmade) => {

@@ -9,15 +9,17 @@ const Footer = () => {
         <p className="footer-links">
           <a href="#" className="link-1">Home</a>
           <a href="#">About</a>
-          <a href="#">Contact</a>
+          <a href="#">handmade</a>
+          <a href="#">handwork</a>
+
         </p>
-        <p className="footer-company-name">OH Ya © 2023</p>
+        <p className="footer-company-name">Handi Home © 2023</p>
       </div>
 
       <div className="footer-center">
         <div>
           <i className="fa fa-map-marker"></i>
-          <p><span>NetFly Tunisie</span></p>
+          <p><span>Handi Home</span></p>
         </div>
         <div>
           <i className="fa fa-phone"></i>
@@ -25,7 +27,7 @@ const Footer = () => {
         </div>
         <div>
           <i className="fa fa-envelope"></i>
-          <p><a href="mailto:support@company.com">support@Oh_Ya.com</a></p>
+          <p><a href="mailto:support@company.com">support@Handi_Home.com</a></p>
         </div>
       </div>
 

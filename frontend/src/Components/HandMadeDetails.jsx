@@ -3,13 +3,11 @@ import '../css/App.css';
 
 const HandMadeDetails = ({ data, onBack }) => {
   if (!data) {
-    // If data is undefined, you can handle it gracefully
     return null;
   }
 
   const { title, img, description, video } = data;
 
-  // Extract the video ID from the full YouTube URL
   const videoId = getYouTubeVideoId(video);
 
   return (
