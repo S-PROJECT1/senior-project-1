@@ -54,7 +54,7 @@ function AddHandMade({ onAddHandmade, onAddSuccess }) {
       <div className='welcome'> <img src={home2}/> </div>
 
       <div className='button-one'>
-        <button onClick={handleOpenModal}>📝</button>
+        <button onClick={handleOpenModal}>🖋️</button>
       </div>
 
       {showModal && (
