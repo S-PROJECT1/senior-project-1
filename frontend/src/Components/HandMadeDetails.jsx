@@ -1,4 +1,3 @@
-// HandMadeDetails.js
 import React from 'react';
 import '../css/App.css';
 
@@ -14,13 +13,15 @@ const HandMadeDetails = ({ data, onBack }) => {
       <img src={data.img} alt="Handmade" />
       {/* Add a check for data.description */}
       {data.description && <p>{data.description}</p>}
-      <video controls width="100%">
-        {/* Add a check for data.video */}
-        {data.video && (
+      {data.video ? (
+        // Use the <video> element for local videos
+        <video controls width="100%">
           <source src={data.video} type="video/mp4" />
-        )}
-        Your browser does not support the video tag.
-      </video>
+          Your browser does not support the video tag.
+        </video>
+      ) : (
+        <p>No video available</p>
+      )}
       <button onClick={onBack}>Back</button>
     </div>
   );

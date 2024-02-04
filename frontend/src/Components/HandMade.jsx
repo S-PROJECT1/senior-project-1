@@ -30,9 +30,7 @@ function HandMade() {
 
   const handleShowDetails = (handmade) => {
     setSelectedItem({ type: 'handmade', data: handmade });
-    setView('details'); // Set the view state to 'details'
   };
-  
 
   const handleCloseModal = () => {
     setSelectedItem(null);
