@@ -23,7 +23,7 @@ const HandWorkDetails = ({ data, onBack }) => {
 
   return (
     <div className="details-container full-screen-details">
-      <h2>{data.title}</h2>
+      <div className='title'>{data.title}</div>
       <img src={data.image} alt="Handiwork" />
       <p>{data.desc}</p>
       <iframe
