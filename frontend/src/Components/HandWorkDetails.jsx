@@ -33,6 +33,7 @@ const HandWorkDetails = ({ data, onBack }) => {
   );
 };
 
+
 // Function to extract the YouTube video ID from the URL
 function getYouTubeVideoId(url) {
   const match = url.match(/(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/ ]{11})/);
@@ -40,6 +41,7 @@ function getYouTubeVideoId(url) {
 }
 
 export default HandWorkDetails;
+
 
 
 
