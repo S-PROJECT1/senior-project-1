@@ -6,8 +6,113 @@ size: 20%;
 transition: transform .1s;
 display:inline-flex;
 }
-.i1:hover{
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.5);
+
+    .i2{
+height: 30%;
+width: 30%;
+clip-path:ellipse(33% 50%);
+size: 20%;
+transition: transform .1s;
+display:inline-flex;
+}
+.i3{
+    height: 30%;
+    width: 30%;
+    clip-path:ellipse(33% 50%);
+    size: 20%;
+    transition: transform .1s;
+    display:inline-flex;
     }
+.i4{
+        height: 30%;
+        width: 30%;
+        clip-path:ellipse(33% 50%);
+        size: 20%;
+        transition: transform .1s;
+        display:inline-flex;
+        }
+        .i5{
+            height: 30%;
+            width: 30%;
+            clip-path:ellipse(33% 50%);
+            size: 20%;
+            transition: transform .1s;
+            display:inline-flex;
+            }
+            .i6{
+                height: 30%;
+                width: 30%;
+                clip-path:ellipse(33% 50%);
+                size: 20%;
+                transition: transform .1s;
+                display:inline-flex;
+                }
+                .i7{
+                    height: 30%;
+                    width: 30%;
+                    clip-path:ellipse(33% 50%);
+                    size: 20%;
+                    transition: transform .1s;
+                    display:inline-flex;
+                    }
+                    .i8{
+                        height: 30%;
+                        width: 30%;
+                        clip-path:ellipse(33% 50%);
+                        size: 20%;
+                        transition: transform .1s;
+                        display:inline-flex;
+                        }
+                        .i9{
+                            height: 30%;
+                            width: 30%;
+                            clip-path:ellipse(33% 50%);
+                            size: 20%;
+                            transition: transform .1s;
+                            display:inline-flex;
+                            }
+                            .i1:hover{
+                                -ms-transform: scale(1.5); /* IE 9 */
+                                -webkit-transform: scale(1.5); /* Safari 3-8 */
+                                transform: scale(1.5);
+                                }
+                                .i2:hover{
+                                    -ms-transform: scale(1.5); /* IE 9 */
+                                    -webkit-transform: scale(1.5); /* Safari 3-8 */
+                                    transform: scale(1.5);
+                                    }
+                                    .i3:hover{
+                                        -ms-transform: scale(1.5); /* IE 9 */
+                                        -webkit-transform: scale(1.5); /* Safari 3-8 */
+                                        transform: scale(1.5);
+                                        }
+                                        .i4:hover{
+                                            -ms-transform: scale(1.5); /* IE 9 */
+                                            -webkit-transform: scale(1.5); /* Safari 3-8 */
+                                            transform: scale(1.5);
+                                            }
+                                            .i5:hover{
+                                                -ms-transform: scale(1.5); /* IE 9 */
+                                                -webkit-transform: scale(1.5); /* Safari 3-8 */
+                                                transform: scale(1.5);
+                                                }
+                                                .i6:hover{
+                                                    -ms-transform: scale(1.5); /* IE 9 */
+                                                    -webkit-transform: scale(1.5); /* Safari 3-8 */
+                                                    transform: scale(1.5);
+                                                    }
+                                                    .i7:hover{
+                                                        -ms-transform: scale(1.5); /* IE 9 */
+                                                        -webkit-transform: scale(1.5); /* Safari 3-8 */
+                                                        transform: scale(1.5);
+                                                        }
+                                                        .i8:hover{
+                                                            -ms-transform: scale(1.5); /* IE 9 */
+                                                            -webkit-transform: scale(1.5); /* Safari 3-8 */
+                                                            transform: scale(1.5);
+                                                            }
+                                                            .i9:hover{
+                                                                -ms-transform: scale(1.5); /* IE 9 */
+                                                                -webkit-transform: scale(1.5); /* Safari 3-8 */
+                                                                transform: scale(1.5);
+                                                                }
