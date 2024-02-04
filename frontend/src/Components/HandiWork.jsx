@@ -75,7 +75,8 @@ const Handiwork = () => {
     <div className="full-screen-container">
       {view === 'main' && (
         <>
-          <AddHandWork onAddHandWork={handleAddHandWork} onAddSuccess={() => setRefreshPage(true)} />
+          <div className='add-handmade'><AddHandWork onAddHandWork={handleAddHandWork} onAddSuccess={() => setRefreshPage(true)} /></div>
+
           {handworkData.map(handiwork => (
             <div key={handiwork.id_Work} className="card">
               <img src={handiwork.image} alt="Handiwork" />

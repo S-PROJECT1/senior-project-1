@@ -33,7 +33,7 @@ const Register = (props) => {
 
 
       return (
-            <form className='login' action='' onSubmit={handleSubmit}>
+            <div className='signin-container' action='' onSubmit={handleSubmit}>
                   <label>
                         <p>Username</p>
                         <input onChange={handleInput} type="text" name="username" placeholder="Enter username" />
@@ -49,9 +49,9 @@ const Register = (props) => {
                         <input onChange={handleInput} type="password" name="password" placeholder="*********" />
                         <span>{errors.password && <span>{errors.password}</span>}</span>
                   </label>
-                  <button type='submit' className='have'  >Sign In</button>
-                  <button onClick={() => props.switchView('Login')} className='next'>Have An Account? Log In</button>
-            </form>
+                  <button type='submit' className='signin'  >Sign In</button>
+                  <button onClick={() => props.switchView('Login')} className='change-view-signin'>Have An Account? Log In</button>
+            </div>
 
       );
 }

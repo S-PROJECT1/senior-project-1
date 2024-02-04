@@ -12,12 +12,12 @@ body {
   bottom: 14px;
   cursor: pointer;
   color: #000000;
-font-size: 35px;
+  font-size: 35px;
 }
 
 .nav:hover {
   background-color: #34495e;
-  
+
 }
 
 .items {
@@ -68,6 +68,7 @@ font-size: 35px;
 .container:hover {
   margin-left: 0;
 }
+
 /*Footer*/
 .Footer {
   padding: 2rem 0;
@@ -90,6 +91,7 @@ font-size: 35px;
   padding: 0rem 5rem 0.8rem 0;
   font-weight: 500;
 }
+
 .Footer h5 {
   color: #09605f;
 }
@@ -139,10 +141,10 @@ font-size: 35px;
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
   margin: 100px;
- margin-left: 9%;
- margin-top: 2%;
+  margin-left: 9%;
+  margin-top: 2%;
 }
 
 
@@ -216,7 +218,7 @@ font-size: 35px;
   margin-top: 10px;
   margin-left: 15px;
 
-  
+
 }
 
 .card-button1:hover {
@@ -241,6 +243,7 @@ font-size: 35px;
   margin-bottom: 7%;
 }
 
+
 .slider img {
   
   width: 70%;
@@ -249,26 +252,15 @@ border-radius:20px;
 }
 
 
-
 .full-screen-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 20px;
+  margin: 0px;
+  position: relative;
+  top: 80px;
 }
 
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .modal-content {
   background-color: #fff;
@@ -321,7 +313,7 @@ border-radius:20px;
 }
 
 
-.button-one button{
+.button-one button {
   font-size: 35px;
   margin-left: 250%;
   margin-top: 8%;
@@ -338,7 +330,7 @@ border-radius:20px;
   background-color: #e3f8f7;
   margin-bottom: 20px;
 
-  
+
 }
 /*hello*/
 
