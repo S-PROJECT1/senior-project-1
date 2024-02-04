@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import home3 from './Assets/home3.png'
 
 function AddHandWork({ onAddHandWork, onAddSuccess }) {
   const [formData, setFormData] = useState({
@@ -47,8 +48,12 @@ function AddHandWork({ onAddHandWork, onAddSuccess }) {
   };
 
   return (
-    <div>
-      <button onClick={handleOpenModal}>Add Handwork</button>
+    <div >
+      <div className='welc'> <img src={home3}/> </div>
+
+      <div className='button-two'>
+      <button onClick={handleOpenModal}>📝</button>
+      </div>
       {showModal && (
         <div className="modal">
           <div className="modal-content">
@@ -84,4 +89,3 @@ function AddHandWork({ onAddHandWork, onAddSuccess }) {
 }
 
 export default AddHandWork;
-console.log('ameni')
