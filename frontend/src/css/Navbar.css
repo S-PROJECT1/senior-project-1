@@ -1,16 +1,14 @@
-
-
 .navbar {
-      background: #09605f;
-      padding: 30px;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 16px;
-  }
-    
-    /* .logo {
+  background: #09605f;
+  padding: 30px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 16px;
+}
+
+/* .logo {
       font-size: 1.5rem;
       font-weight: bold;
       color: #34495e;

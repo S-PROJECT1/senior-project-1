@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function AddHandMade({ onAddHandmade }) {
+function AddHandMade({ onAddHandmade, onAddSuccess }) {
   const [formData, setFormData] = useState({
     img: '',
     title: '',
@@ -35,6 +35,8 @@ function AddHandMade({ onAddHandmade }) {
         });
         // Close the modal after submission
         setShowModal(false);
+        // Notify the parent component about the successful addition
+        onAddSuccess();
       })
       .catch(error => {
         console.error('Error adding handmade:', error);
@@ -50,8 +52,12 @@ function AddHandMade({ onAddHandmade }) {
   };
 
   return (
-    <div>
-      <button onClick={handleOpenModal}>Add Handmade</button>
+    <div className='add'>
+      <div className='welcome'> <h1>welcome to the lovely space</h1> </div>
+
+      <div className='button-one'>
+        <button onClick={handleOpenModal}>📝</button>
+      </div>
       {showModal && (
         <div className="modal">
           <div className="modal-content">

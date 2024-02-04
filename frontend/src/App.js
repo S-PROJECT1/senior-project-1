@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Handiwork from './Components/HandiWork.jsx';
 import HandMade from './Components/HandMade.jsx';
 import Navbar from './Components/Navbar';
@@ -12,11 +12,14 @@ import Login from './Components/login.jsx';
 // import { AuthContext, AuthProvider } from './context/AuthContext.js';
 import Footer from './Components/Footer.jsx';
 import Homy from './Components/Homy.jsx';
-
+import ChatBot from 'react-simple-chatbot'
+import { ThemeProvider } from 'styled-components';
+import { ContactUs } from './Components/ContactUs.jsx';
 
 function App() {
+
   const [menuView, setMenuView] = useState(false);
-  const [view, setView] = useState('Register');
+  const [view, setView] = useState('Login');
   // const [curr, setcurr] = useState("login");
 
   // const { isLoading, userToken } = useContext(AuthContext)
@@ -37,59 +40,134 @@ function App() {
     setMenuView(false);
   };
 
+
+
+  const steps = [
+    {
+      id: '0',
+      message: 'Welcome! What is your name?',
+      trigger: '1',
+    },
+    {
+      id: '1',
+      user: true,
+      trigger: '2',
+    },
+    {
+      id: '2',
+      message: 'Hi there, how can I help you?',
+      trigger: '3',
+    },
+    {
+      id: '3',
+      user: true,
+      trigger: '4',
+    },
+
+    {
+      id: '4',
+      message: ({ previousValue }) => {
+        const lowerCaseInput = previousValue.toLowerCase();
+
+        if (lowerCaseInput.includes('handmade')) {
+          switchView('HandMade');
+          return 'You can find handmade items by clicking on "HandMade" in the sidebar.';
+        } else if (lowerCaseInput.includes('handwork')) {
+          switchView('Handiwork');
+          return 'You can find handiwork items by clicking on "Handiwork" in the sidebar.';
+        } else if (lowerCaseInput.includes('videos')) {
+          return 'Yes, there are videos available. Click on a card to watch.';
+        } else if (lowerCaseInput.includes('i love you')) {
+
+          return 'i love you too.';
+        } else {
+          return `I'm not sure how to help with that. Is there anything else you'd like to know?`;
+        }
+      },
+      trigger: '3',
+    },
+  ];
+
+
+  // Creating our own theme
+  const theme = {
+    background: '#fff',
+    headerBgColor: '#09605f',
+    headerFontSize: '20px',
+    botBubbleColor: '#0F3789',
+    headerFontColor: 'white',
+    botFontColor: 'white',
+    userBubbleColor: '#09605f',
+    userFontColor: 'white',
+  };
+
+  // Set some properties of the bot
+  const config = {
+    // botAvatar: "img.png",
+    floating: true,
+  };
+
+
+
+
   return (
     <div>
+      <Navbar view={view} />
+      {view === 'Home' && <Slider />}
 
-
-      {/* {userToken !== null ? <Slider /> : <Login />} */}
-
-
-
-
-
-
-
-
-      <Navbar />
-      {/* Conditionally render the Slider component only for the Home view */}
-      {view === 'Home' && <Slider /> }
-
-      <div className={`sidebar ${menuView ? 'active' : ''}`}>
-        <div className="katha" onClick={toggleMenu}>
-          ☰
+      {view !== 'Login' && (
+        <div className={`sidebar ${menuView ? 'active' : ''}`}>
+          <div className="katha" onClick={toggleMenu}>
+            ☰
+          </div>
+          <span className="items" onClick={() => switchView('Home')}>
+            <AiFillHome className="icon" /> Home
+          </span>
+          <span className="items" onClick={() => switchView('Handiwork')}>
+            <FaTools className="icon" /> Handiwork
+          </span>
+          <span className="items" onClick={() => switchView('HandMade')}>
+            <FaHandPaper className="icon" /> HandMade
+          </span>
+          <span className="items" onClick={() => switchView('About')}>
+            <AiFillPhone className="icon" /> About
+          </span>
+          <span className="items" onClick={() => switchView('Contact')}>
+            <AiFillPlusCircle className="icon" /> Contact
+          </span>
+          <span className="items" onClick={() => switchView('Login')}>
+            <AiFillPlusCircle className="icon" /> Login
+          </span>
         </div>
-        <span className="items" onClick={() => switchView('Home')}>
-          <AiFillHome className="icon" /> Home
-        </span>
-        <span className="items" onClick={() => switchView('Handiwork')}>
-          <FaTools className="icon" /> Handiwork
-        </span>
-        <span className="items" onClick={() => switchView('HandMade')}>
-          <FaHandPaper className="icon" /> HandMade
-        </span>
-        <span className="items" onClick={() => switchView('About')}>
-          <AiFillPhone className="icon" /> About
-        </span>
-        <span className="items" onClick={() => switchView('Contact')}>
-          <AiFillPlusCircle className="icon" /> Contact
-        </span>
-        <span className="items" onClick={() => switchView('Login')}>
-          <AiFillPlusCircle className="icon" /> Login
-        </span>
-      </div>
+      )}
       <div className={`container ${menuView ? 'active' : ''}`}>
 
 
 
         {view === 'Handiwork' && <Handiwork />}
         {view === 'HandMade' && <HandMade />}
-        {/* {view === 'Home' && <Home />} */}
         {view === 'Login' && <Login switchView={switchView} />}
         {view === 'Register' && <Register switchView={switchView} />}
-
-
         {view === 'About' && <AboutUs />}
-        <Homy/>
+        {view === 'Home' && <Homy />}
+        {view === 'Contact' && <ContactUs />}
+
+
+
+
+        <ThemeProvider theme={theme}>
+          <ChatBot
+
+            // This appears as the header
+            // text for the chat bot
+            headerTitle="ChatBot"
+            steps={steps}
+            {...config}
+
+          />
+        </ThemeProvider>
+
+
         <Footer />
 
       </div>

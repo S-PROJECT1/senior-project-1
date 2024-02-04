@@ -1,3 +1,4 @@
+// HandMade.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddHandMade from "./AddHandMade";
@@ -9,27 +10,34 @@ import '../css/App.css';
 function HandMade() {
   const [handmades, setHandmades] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [view, setView] = useState('main');
+  const [refreshPage, setRefreshPage] = useState(false);
 
   useEffect(() => {
     axios.get('http://localhost:8080/handmade/getAll')
       .then(response => {
         setHandmades(response.data);
+        setRefreshPage(false);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [refreshPage]);
 
   const handleAddHandmade = (newHandmade) => {
     setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
+    setRefreshPage(true);
   };
 
   const handleShowDetails = (handmade) => {
     setSelectedItem({ type: 'handmade', data: handmade });
+    setView('details'); 
   };
+  
 
   const handleCloseModal = () => {
     setSelectedItem(null);
+    setView('main'); 
   };
 
   const handleUpdateClick = (handmade) => {
@@ -57,18 +65,20 @@ function HandMade() {
 
   return (
     <div className="full-screen-container">
-      <AddHandMade onAddHandmade={handleAddHandmade} />
+
+      <AddHandMade onAddHandmade={handleAddHandmade} onAddSuccess={() => setRefreshPage(true)} />
+
       <div className="cards-container">
         {handmades.map(handmade => (
           <div key={handmade.id} className="card">
             <img src={handmade.img} alt="Handmade" />
             <div>
               <div className="card-title">{handmade.title}</div>
-              <div className="card-description">{handmade.desc}</div>
+              <div className="card-description">{handmade.description}</div>
               <button className="card-button" onClick={() => handleShowDetails(handmade)}>
                 See more details
               </button>
-              <button className="card-button" onClick={() => handleUpdateClick(handmade)}>
+              <button className="card-button1" onClick={() => handleUpdateClick(handmade)}>
                 Update
               </button>
               <button className="card-button delete-button" onClick={() => handleDeleteClick(handmade.id)}>
@@ -78,9 +88,16 @@ function HandMade() {
           </div>
         ))}
       </div>
+      {view === 'details' && selectedItem && (
+        <HandMadeDetails
+          data={selectedItem.data}
+          onBack={handleCloseModal}
+        />
+      )}
       {selectedItem && (
         selectedItem.type === 'handmade' ? (
           <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />
+          
         ) : (
           <UpdateHandMade
             onUpdateHandmade={handleUpdateHandmade}
@@ -94,3 +111,4 @@ function HandMade() {
 }
 
 export default HandMade;
+

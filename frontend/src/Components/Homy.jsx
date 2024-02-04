@@ -15,6 +15,7 @@ import p9 from './Assets/p9.jpg';
 
 
 
+
  const Homy = () => {
   return (
     <div>
@@ -29,6 +30,17 @@ import p9 from './Assets/p9.jpg';
         <img className="i1"src={p9} alt="" />
         </div>
   )
+const Homy = () => {
+      return (
+            <div>
+                  <img className="i1" src={p1} alt="" />
+                  <img className="i1" src={p2} alt="" />
+                  <img className="i1" src={p3} alt="" />
+                  <img className="i1" src={p4} alt="" />
+                  <img className="i1" src={p5} alt="" />
+                  <img className="i1" src={p6} alt="" />
+            </div>
+      )
 }
 
 export default Homy

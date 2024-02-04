@@ -3,13 +3,20 @@ import React from 'react';
 import '../css/App.css';
 
 const HandMadeDetails = ({ data, onBack }) => {
+  if (!data) {
+    // If data is undefined, you can handle it gracefully
+    return <div>Loading...</div>; // or any other loading state or message
+  }
+
+  const { title, img, description, video } = data;
+
   return (
     <div className="details-container full-screen-details">
-      <h2>{data.title}</h2>
-      <img src={data.img} alt="Handmade" />
-      <p>{data.desc}</p>
+      <h2>{title}</h2>
+      <img src={img} alt="Handmade" />
+      <p>{description}</p>
       <video controls width="100%">
-        <source src={data.video} type="video/mp4" />
+        <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <button onClick={onBack}>Back</button>

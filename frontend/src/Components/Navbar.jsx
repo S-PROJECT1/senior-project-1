@@ -1,15 +1,17 @@
-
+import React from 'react';
 import '../css/Navbar.css';
 import SearchComponent from './SearchComponent';
 
-const Navbar = () => {
+const Navbar = ({ view }) => {
   return (
-    <nav className="navbar">
-      <div className="logo">Your  Logo</div>
-      <ul className="nav-links">
-        <SearchComponent/>
-      </ul>
-    </nav>
+        <nav className="navbar">
+          <div className="logo">Your Logo</div>
+          {view !== 'Login' && (
+            <ul className="nav-links">
+              <SearchComponent />
+            </ul>
+          )}
+        </nav>
   );
 };
 
