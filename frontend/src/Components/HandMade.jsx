@@ -89,11 +89,13 @@ function HandMade() {
 
   return (
     <div className="full-screen-container">
+
       <AddHandMade
         onAddHandmade={handleAddHandmade}
         onAddSuccess={() => setRefreshPage(true)}
         view={view}
       />
+
 
       {view === 'main' && (
         <MainView
