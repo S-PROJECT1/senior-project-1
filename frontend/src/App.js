@@ -115,7 +115,7 @@ function App() {
       <Navbar view={view} />
       {view === 'Home' && <Slider />}
 
-      {view !== 'Login' && (
+      {view !== 'Login'&&view !== 'Register' && (
         <div className={`sidebar ${menuView ? 'active' : ''}`}>
           <div className="katha" onClick={toggleMenu}>
             ☰

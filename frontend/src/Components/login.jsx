@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import "./LoginAndRegister.css";
 import Validation from "./LoginValidation.js"
 import axios from 'axios';
@@ -37,7 +37,7 @@ const Login = (props) => {
 
 
       return (
-            <form className='login' action='' onSubmit={handleSubmit}>
+            <form className='login-and-signin-container' action='' onSubmit={handleSubmit}>
                   <label>
                         <p>Email</p>
                         <input onChange={handleInput} type="text" name="email" placeholder="Enter Email" />
@@ -49,8 +49,8 @@ const Login = (props) => {
                         <span>{errors.password && <span>{errors.password}</span>}</span>
                   </label>
                   {/* <input type="submit" value="Log In" /> */}
-                  <button type='submit' className='have'  >Log In</button>
-                  <button onClick={() => props.switchView('Register')} className='next'>Dont Have An Account? Register</button>
+                  <button type='submit' className='login-and-signin'  >Log In</button>
+                  <button onClick={() => props.switchView('Register')} className='change-view-login'>Dont Have An Account? Sign In Here</button>
             </form>
 
 
