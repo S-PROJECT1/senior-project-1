@@ -3,5 +3,11 @@ height: 30%;
 width: 30%;
 clip-path:ellipse(33% 50%);
 size: 20%;
-
+transition: transform .1s;
+display:inline-flex;
 }
+.i1:hover{
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5);
+    }
