@@ -7,7 +7,7 @@ const AboutUs = () => {
       <div className='header'>
         <h1>About Us</h1>
         <p>Welcome to our platform! I hope you find what you are looking for here.</p>
-        <button className="get-started-button">Scroll Down</button>
+        <h1 className="get-started-button">⬇️</h1>
       </div>
 
    

@@ -73,29 +73,33 @@ const Handiwork = () => {
 
   return (
     <div className="full-screen-container">
+      
       {view === 'main' && (
-        <>
-          <div className='add-handmade'><AddHandWork onAddHandWork={handleAddHandWork} onAddSuccess={() => setRefreshPage(true)} /></div>
-
-          {handworkData.map(handiwork => (
-            <div key={handiwork.id_Work} className="card">
-              <img src={handiwork.image} alt="Handiwork" />
-              <div>
-                <div className="card-title">{handiwork.title}</div>
-                <div className="card-description">{handiwork.desc}</div>
-                <button className="card-button" onClick={() => handleShowDetails(handiwork)}>
-                  See more details
-                </button>
-                <button className="card-button" onClick={() => handleUpdateClick(handiwork)}>
-                  Update
-                </button>
-                <button className="card-button delete-button" onClick={() => handleDeleteClick(handiwork.id_Work)}>
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))}
-        </>
+    <div className="cards-container">
+    <AddHandWork onAddHandWork={handleAddHandWork} onAddSuccess={() => setRefreshPage(true)} />
+    
+    {handworkData.map(handiwork => (
+      <div key={handiwork.id_Work} className="card">
+        <img src={handiwork.image} alt="Handiwork" />
+        <div>
+          <div className="card-title">{handiwork.title}</div>
+          {/* <div className="card-description">{handiwork.desc}</div> */}
+  
+          <button className="card-button" onClick={() => handleShowDetails(handiwork)}>
+            See more details
+          </button>
+          <button className="card-button1" onClick={() => handleUpdateClick(handiwork)}>
+            Update
+          </button>
+          <button className="card-button delete-button1" onClick={() => handleDeleteClick(handiwork.id_Work)}>
+            Delete
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+  
+      
       )}
       {view === 'details' && selectedItem && (
         <HandWorkDetails

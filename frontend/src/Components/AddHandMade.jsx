@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import "../css/App.css";
+import "../css/App.css"
+import home2 from './Assets/home2.png'
+
 
 function AddHandMade({ onAddHandmade, onAddSuccess }) {
   const [formData, setFormData] = useState({
@@ -49,9 +51,7 @@ function AddHandMade({ onAddHandmade, onAddSuccess }) {
 
   return (
     <div className='add'>
-      <div className='welcome'>
-        <h1>welcome to the lovely space</h1>
-      </div>
+      <div className='welcome'> <img src={home2}/> </div>
 
       <div className='button-one'>
         <button onClick={handleOpenModal}>📝</button>

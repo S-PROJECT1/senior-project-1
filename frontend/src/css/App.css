@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #ffffff;
+  background: linear-gradient(to right, rgb(212, 228, 243), rgb(242, 243, 219));
 }
 
 /* side-bar ----------------------------------- */
@@ -48,7 +48,7 @@ body {
   color: white;
   height: 100vh;
   position: fixed;
-  top: 75px;
+  top: 90px;
   left: -149px;
   transition: left 0.3s ease;
   z-index: 1;
@@ -142,9 +142,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 100px;
+  margin: 220px;
   margin-left: 9%;
-  margin-top: 2%;
+  margin-top: 0%;
 }
 
 
@@ -226,6 +226,25 @@ body {
 }
 
 
+.welcome h1 {
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 57px;
+  padding: 30px 0;
+  background-color: #e3f8f7;
+  margin-bottom: 20px;
+
+
+}
+
+
+.button-two button {
+  font-size: 35px;
+  position: fixed;
+  top: 20%; /* Adjust the top position as needed */
+  right: 2%; /* Adjust the right position as needed */
+}
+
+
 /* Home-i-Think */
 .work {
   position: relative;
@@ -236,21 +255,19 @@ body {
 
 .slider {
   margin-top: 5%;
-  width: 80%;
-  height: 900px;
+  width: 90%;
+  height: 700px;
   overflow: hidden;
-  margin-left: 10%;
-  position: relative;
-  bottom: 20px;
+  margin-left: 19%;
+  margin-bottom: 7%;
 }
 
 
 .slider img {
-  width: 100%;
-  height: 730px;
-  border-radius: 2px;
-  position: relative;
-  bottom: 29px;
+  
+  width: 70%;
+  height: 700px;
+border-radius:20px;
 }
 
 
@@ -317,22 +334,16 @@ body {
 
 .button-one button {
   font-size: 35px;
-  margin-left: 250%;
-  margin-top: 8%;
+  position: fixed;
+  top: 20%; /* Adjust the top position as needed */
+  right: 2%; /* Adjust the right position as needed */
 }
 
 
 
 
-.welcome h1 {
-  font-family: Brush Script MT, Brush Script Std, cursive;
-  font-size: 57px;
-  padding: 30px 0;
-  background-color: #e3f8f7;
-  margin-bottom: 20px;
+/*hello*/
 
-
-}
 .modal-background {
   position: fixed;
   top: 0;
@@ -362,3 +373,11 @@ body {
 }
 
 
+
+.welc img {
+  width :60%;
+  height: 30%;
+  /* margin-top: 1%; */
+  margin-bottom: 0.5%;
+  margin-left: 20%;
+}
