@@ -15,7 +15,7 @@ function MainView({ handmades, onShowDetails, onUpdateClick, onDeleteClick }) {
           <img src={handmade.img} alt="Handmade" />
           <div>
             <div className="card-title">{handmade.title}</div>
-            {/* <div className="card-description">{handmade.description}</div> */}
+            <div className="card-description">{handmade.description}</div>
             <button className="card-button" onClick={() => onShowDetails(handmade)}>
               See more details
             </button>
@@ -89,7 +89,11 @@ function HandMade() {
 
   return (
     <div className="full-screen-container">
-      <AddHandMade onAddHandmade={handleAddHandmade} onAddSuccess={() => setRefreshPage(true)} />
+      <AddHandMade
+        onAddHandmade={handleAddHandmade}
+        onAddSuccess={() => setRefreshPage(true)}
+        view={view}
+      />
 
       {view === 'main' && (
         <MainView
