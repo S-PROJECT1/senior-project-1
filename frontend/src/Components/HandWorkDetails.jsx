@@ -31,7 +31,3 @@ const HandWorkDetails = ({ data, onBack }) => {
 };
 
 export default HandWorkDetails;
-
-
-
-
