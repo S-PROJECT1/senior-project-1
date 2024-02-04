@@ -1,3 +1,4 @@
+// HandMade.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddHandMade from "./AddHandMade";
@@ -16,7 +17,7 @@ function HandMade() {
     axios.get('http://localhost:8080/handmade/getAll')
       .then(response => {
         setHandmades(response.data);
-        setRefreshPage(false); // Reset the refreshPage state
+        setRefreshPage(false);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -25,15 +26,17 @@ function HandMade() {
 
   const handleAddHandmade = (newHandmade) => {
     setHandmades((prevHandmades) => [...prevHandmades, newHandmade]);
-    setRefreshPage(true); // Trigger a page refresh after adding data
+    setRefreshPage(true);
   };
 
   const handleShowDetails = (handmade) => {
     setSelectedItem({ type: 'handmade', data: handmade });
+    setView('details'); 
   };
 
   const handleCloseModal = () => {
     setSelectedItem(null);
+    setView('main'); 
   };
 
   const handleUpdateClick = (handmade) => {
@@ -70,7 +73,7 @@ function HandMade() {
             <img src={handmade.img} alt="Handmade" />
             <div>
               <div className="card-title">{handmade.title}</div>
-              <div className="card-description">{handmade.desc}</div>
+              <div className="card-description">{handmade.description}</div>
               <button className="card-button" onClick={() => handleShowDetails(handmade)}>
                 See more details
               </button>
@@ -87,12 +90,13 @@ function HandMade() {
       {view === 'details' && selectedItem && (
         <HandMadeDetails
           data={selectedItem.data}
-          onBack={() => setView('main')}
+          onBack={handleCloseModal}
         />
       )}
       {selectedItem && (
         selectedItem.type === 'handmade' ? (
           <DetailsModal selectedItem={selectedItem} onClose={handleCloseModal} />
+          
         ) : (
           <UpdateHandMade
             onUpdateHandmade={handleUpdateHandmade}
@@ -106,3 +110,4 @@ function HandMade() {
 }
 
 export default HandMade;
+
