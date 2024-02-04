@@ -6,6 +6,10 @@ import p3 from './Assets/p3.jpg';
 import p4 from './Assets/p4.jpg';
 import p5 from './Assets/p5.jpg';
 import p6 from './Assets/p6.jpg';
+import p7 from './Assets/p7.jpg';
+import p8 from './Assets/p8.jpg';
+import p9 from './Assets/p9.jpg';
+
 
 
 
@@ -20,6 +24,9 @@ import p6 from './Assets/p6.jpg';
         <img className="i1"src={p4} alt="" />
         <img className="i1"src={p5} alt="" />
         <img className="i1"src={p6} alt="" />
+        <img className="i1"src={p7} alt="" />
+        <img className="i1"src={p8} alt="" />
+        <img className="i1"src={p9} alt="" />
         </div>
   )
 }
