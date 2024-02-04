@@ -7,7 +7,6 @@ import '../css/App.css'
 const DetailsModal = ({ selectedItem, onClose }) => {
   return (
     <div className="modal">
-      <button onClick={onClose}>Close</button>
       {selectedItem && (
         <>
           {selectedItem.type === 'handmade' && <HandMadeDetails handmade={selectedItem.data} />}
