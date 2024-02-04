@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../css/App.css"
+import home2 from './Assets/home2.png'
+
 
 function AddHandMade({ onAddHandmade, onAddSuccess }) {
   const [formData, setFormData] = useState({
@@ -22,21 +24,16 @@ function AddHandMade({ onAddHandmade, onAddSuccess }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Send a POST request to add the handmade
     axios.post('http://localhost:8080/handmade/add', formData)
       .then(response => {
-        // Update the parent component's state with the new handmade
         onAddHandmade(response.data);
-        // Optionally, you can reset the form data
         setFormData({
           img: '',
           title: '',
           description: '',
           video: '',
         });
-        // Close the modal after submission
         setShowModal(false);
-        // Notify the parent component about the successful addition
         onAddSuccess();
       })
       .catch(error => {
@@ -54,14 +51,15 @@ function AddHandMade({ onAddHandmade, onAddSuccess }) {
 
   return (
     <div className='add'>
-      <div className='welcome'> <h1>welcome to the lovely space</h1> </div>
+      <div className='welcome'> <img src={home2}/> </div>
 
       <div className='button-one'>
         <button onClick={handleOpenModal}>📝</button>
       </div>
+
       {showModal && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modal-background">
+          <div className="modal">
             <span className="close" onClick={handleCloseModal}>&times;</span>
             <form onSubmit={handleSubmit}>
               <label>

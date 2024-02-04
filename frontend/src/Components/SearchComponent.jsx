@@ -9,12 +9,13 @@ const SearchComponent = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get(`http://localhost:8080/handmade/getbytitle/${searchTerm}`);
-      console.log(response); // log the response
+      console.log('Response:', response); // Log the entire response object
+      console.log('Data:', response.data); // Log the data received
       setSearchResults(response.data);
       setError(null);
     } catch (error) {
       setError('Error fetching data');
-      console.error(error);
+      console.error('Error:', error); // Log the error for debugging
     }
   };
   
