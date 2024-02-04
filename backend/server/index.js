@@ -12,13 +12,16 @@ const route3 = require("../routes/handywork.js");
 
 app.use(cors());
 app.use(express.json());
+// app.use((req, res, next) => {
+//   res.setHeader('Content-Security-Policy', "connect-src 'self' www.youtube.com");
+//   next();
+// });
+
 // app.use(session({
 //   secret: 'your_session_secret',
 //   resave: true,
 //   saveUninitialized: true
 // }));
-
-
 
 
 
@@ -51,7 +54,9 @@ app.use(express.json());
 // app.use("/user", requireLogin, route1);
 // app.use("/handmade", requireLogin, verifyToken, route2);
 // app.use("/handywork", requireLogin, verifyToken, route3);
-// 
+
+//
+
 app.use("/user", route1);
 app.use("/handmade", route2);
 app.use("/handywork", route3);
