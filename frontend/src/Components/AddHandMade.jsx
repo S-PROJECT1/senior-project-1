@@ -56,7 +56,7 @@ function AddHandMade({ onAddHandmade, onAddSuccess, view }) {
       )}
 
       <div className='button-one'>
-        <button onClick={handleOpenModal}>📝</button>
+        <button onClick={handleOpenModal}>🖋️</button>
       </div>
 
       {showModal && (
