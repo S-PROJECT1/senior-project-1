@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import home3 from './Assets/home3.png'
+import home3 from './Assets/home3.png';
+import '../css/App.css';
 
 function AddHandWork({ onAddHandWork, onAddSuccess }) {
   const [formData, setFormData] = useState({
@@ -39,6 +40,7 @@ function AddHandWork({ onAddHandWork, onAddSuccess }) {
         console.error('Error adding handwork:', error);
       });
   };
+
   const handleOpenModal = () => {
     setShowModal(true);
   };
@@ -48,15 +50,17 @@ function AddHandWork({ onAddHandWork, onAddSuccess }) {
   };
 
   return (
-    <div >
-      <div className='welc'> <img src={home3}/> </div>
+    <div>
+      <div className='welc'> <img src={home3} alt="Welcome" /> </div>
 
       <div className='button-two'>
-      <button onClick={handleOpenModal}>📝</button>
+        <button onClick={handleOpenModal}>📝</button>
       </div>
       {showModal && (
-        <div className="modal">
-          <div className="modal-content">
+        <div>
+          <div className="modal-background"></div>
+
+          <div className="modal">
             <span className="close" onClick={handleCloseModal}>&times;</span>
             <form onSubmit={handleSubmit}>
               <label>
