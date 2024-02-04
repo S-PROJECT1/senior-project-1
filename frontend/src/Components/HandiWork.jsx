@@ -83,6 +83,7 @@ const Handiwork = () => {
               <div>
                 <div className="card-title">{handiwork.title}</div>
                 <div className="card-description">{handiwork.desc}</div>
+
                 <button className="card-button" onClick={() => handleShowDetails(handiwork)}>
                   See more details
                 </button>

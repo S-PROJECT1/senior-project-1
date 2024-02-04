@@ -1,12 +1,43 @@
 .i1{
+<<<<<<< HEAD
+height: 20%;
+width: 15%;
+clip-path:ellipse(35% 50%);
+/* size: 10%; */
+transition: transform 0.1s;
+display:inline-flex;
+margin-left: 1%;
+margin-right: 0.6%;
+
+=======
 height: 30%;
 width: 30%;
 clip-path:ellipse(33% 50%);
 size: 20%;
 transition: transform .1s;
+>>>>>>> 44114d3c3f2a02c50d963d12ed2a01a7f47bf187
 }
 .i1:hover{
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.5);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
     }
+
+    .i2 {
+        width: 15%; /* Adjust the width as needed */
+        height: 242px ; /* Adjust the height as needed */
+        clip-path: ellipse(35% 50%);
+        transition: transform 0.1s;
+        display: inline-flex;
+        margin-left: 1%;
+        margin-right: 0.6%;
+        margin-top: 3%;
+      }
+      
+      .i2:hover {
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+      
+      
