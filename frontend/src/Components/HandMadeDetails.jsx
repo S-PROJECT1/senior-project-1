@@ -5,7 +5,7 @@ import '../css/App.css';
 const HandMadeDetails = ({ data, onBack }) => {
   if (!data) {
     // If data is undefined, you can handle it gracefully
-    return <div>Loading...</div>; // or any other loading state or message
+    return 
   }
 
   const { title, img, description, video } = data;
@@ -17,7 +17,6 @@ const HandMadeDetails = ({ data, onBack }) => {
       <p>{description}</p>
       <video controls width="100%">
         <source src={video} type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <button onClick={onBack}>Back</button>
     </div>
