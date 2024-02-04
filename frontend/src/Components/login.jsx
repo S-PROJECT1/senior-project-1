@@ -13,7 +13,6 @@ const Login = (props) => {
             email: "",
             password: ""
       });
-console.log("shiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
       const handleSubmit = (e) => {
             e.preventDefault(); // Correct the typo here
             seterrors(Validation(values));
