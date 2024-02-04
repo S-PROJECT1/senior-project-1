@@ -4,7 +4,6 @@ width: 30%;
 clip-path:ellipse(33% 50%);
 size: 20%;
 transition: transform .1s;
-display:inline-flex;
 }
 .i1:hover{
     -ms-transform: scale(1.5); /* IE 9 */
