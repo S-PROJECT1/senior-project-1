@@ -19,14 +19,14 @@ import p9 from './Assets/p9.jpg';
   return (
     <div>
         <img  className="i1"src={p1} alt="" />
-        <img  className="i2"src={p2} alt="" />
-        <img className="i3"src={p3} alt="" />
-        <img className="i4"src={p4} alt="" />
-        <img className="i5"src={p5} alt="" />
-        <img className="i6"src={p6} alt="" />
-        <img className="i7"src={p7} alt="" />
-        <img className="i8"src={p8} alt="" />
-        <img className="i9"src={p9} alt="" />
+        <img  className="i1"src={p2} alt="" />
+        <img className="i1"src={p3} alt="" />
+        <img className="i1"src={p4} alt="" />
+        <img className="i1"src={p5} alt="" />
+        <img className="i1"src={p6} alt="" />
+        <img className="i1"src={p7} alt="" />
+        <img className="i1"src={p8} alt="" />
+        <img className="i1"src={p9} alt="" />
         </div>
   )
 }
