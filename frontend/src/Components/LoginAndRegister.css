@@ -1,21 +1,24 @@
 /* LoginAndRegister.css */
 
-.login {
-      max-width: 400px;
+.login-and-signin-container {
+      max-width: 392px;
       margin: 0 auto;
       padding: 20px;
       background-color: #f4f4f4;
       border: 1px solid #ccc;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      top: 61px;
+      height: 318px;
 }
 
-.login label {
+.login-and-signin-container label {
       display: block;
       margin-bottom: 10px;
 }
 
-.login input {
+.login-and-signin-container input {
       width: 96%;
       padding: 10px;
       margin-bottom: 15px;
@@ -23,7 +26,7 @@
       border-radius: 4px;
 }
 
-.login button {
+.login-and-signin {
       width: 39%;
       padding: 12px;
       background-color: #3498db;
@@ -35,16 +38,17 @@
       transition: background-color 0.3s;
       position: relative;
       left: 117px;
-  }
+}
 
-.login button:hover {
+.login-and-signin:hover {
       background-color: #007bb5;
 }
 
 
 /* Add this style for .next button */
-.next {
-      width: 20%;
+.change-view-login {
+      background: transparent;
+      width: 82%;
       padding: 12px;
       color: #3498db;
       border: none;
@@ -54,12 +58,87 @@
       transition: color 0.3s;
       text-decoration: underline;
       position: relative;
-      left: 750px;
-    }
-    
-    .next:hover {
+      left: 33px;
+      top: 12px;
+  }
+
+.change-view:hover {
       color: #007bb5;
       text-decoration: none;
-    }
-    
+}
 
+
+
+
+
+/* ---------------------------------------- */
+
+.signin-container {
+      max-width: 408px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      top: 61px;
+      height: 404px;
+}
+
+.signin-container label {
+      display: block;
+      margin-bottom: 10px;
+      position: relative;
+      bottom: 13px;
+}
+
+.signin-container input {
+      width: 96%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+}
+
+
+.signin {
+      width: 39%;
+      padding: 12px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      position: relative;
+      left: 117px;
+      bottom: 14px;
+  }
+
+.signin:hover {
+      background-color: #007bb5;
+}
+
+
+.change-view-signin {
+      background: transparent;
+      width: 69%;
+      padding: 12px;
+      color: #3498db;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: color 0.3s;
+      text-decoration: underline;
+      position: relative;
+      left: 60px;
+      bottom: 8px;
+  }
+
+.change-view-signin:hover {
+      color: #007bb5;
+      text-decoration: none;
+}
