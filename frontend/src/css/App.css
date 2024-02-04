@@ -428,5 +428,48 @@ border-radius:20px;
   margin-left: 20%;
 }
 
+/* Add these styles to your existing CSS file */
 
-/* Add your other styles as needed */
+.details-container form {
+  display: flex;
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.details-container form input#input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.details-container form button#bu, .details-container form button#bu1 {
+  background-color: #088da5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.details-container form button#bu:hover, .details-container form button#bu1:hover {
+  background-color: #0a9dc6;
+}
+
+#bu1{
+  background-color: #088da5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 50px;
+}
