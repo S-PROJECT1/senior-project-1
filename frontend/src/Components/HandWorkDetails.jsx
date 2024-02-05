@@ -17,9 +17,10 @@ const HandWorkDetails = ({ data, onBack }) => {
     setComments((prevComments) => [...prevComments, comment]);
   };
 
-  const handleLikeClick = () => {
-    setLikes((prevLikes) => prevLikes + 1);
-  };
+ const handleLikeClick = () => {
+  setLikes(prevLikes => prevLikes + 1);
+};
+
 
   return (
     <div className="details-container full-screen-details">
