@@ -17,6 +17,7 @@ body {
 
 .nav:hover {
   background-color: #34495e;
+
 }
 
 .items {
@@ -27,13 +28,17 @@ body {
   align-items: center;
   color: #000000;
   font-size: 21px;
+
 }
+
 
 .items:hover {
   color: #74cdc5;
   text-decoration: underline;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  /* Add a subtle box-shadow on hover */
   border-radius: 4px;
+  /* Add border-radius on hover */
 }
 
 .sidebar {
@@ -55,7 +60,10 @@ body {
 
 .icon {
   margin-right: 6px;
+  /* Adjust the margin for icon spacing */
 }
+
+
 
 .container:hover {
   margin-left: 0;
@@ -126,6 +134,8 @@ body {
   font-weight: 700;
 }
 
+
+
 /* diffrent-cards ----------------------------------- */
 
 .cards-container {
@@ -137,6 +147,7 @@ body {
   margin-top: 0%;
 }
 
+
 .card {
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -145,11 +156,13 @@ body {
   margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
+
 }
 
 .card:hover {
   transform: scale(1.05);
 }
+
 
 .card img {
   width: 100%;
@@ -172,8 +185,7 @@ body {
   font-size: 0.9rem;
 }
 
-.card-button,
-.card-button1 {
+.card-button {
   background-color: #088da5;
   color: white;
   border: none;
@@ -185,12 +197,34 @@ body {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
+
 }
 
-.card-button:hover,
+.card-button:hover {
+  background-color: #0a9dc6;
+}
+
+.card-button1 {
+  background-color:  #088da5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 15px;
+
+
+}
+
 .card-button1:hover {
   background-color: #0a9dc6;
 }
+
 
 .welcome h1 {
   font-family: Brush Script MT, Brush Script Std, cursive;
@@ -198,14 +232,18 @@ body {
   padding: 30px 0;
   background-color: #e3f8f7;
   margin-bottom: 20px;
+
+
 }
+
 
 .button-two button {
   font-size: 35px;
   position: fixed;
-  top: 20%;
-  right: 2%;
+  top: 20%; /* Adjust the top position as needed */
+  right: 2%; /* Adjust the right position as needed */
 }
+
 
 /* Home-i-Think */
 .work {
@@ -213,6 +251,7 @@ body {
   left: 500px;
   font-size: bold;
 }
+
 
 .slider {
   margin-top: 5%;
@@ -223,11 +262,14 @@ body {
   margin-bottom: 2%;
 }
 
+
 .slider img {
+  
   width: 100%;
   height: 600px;
-  border-radius: 20px;
+border-radius:20px;
 }
+
 
 .full-screen-container {
   display: flex;
@@ -238,6 +280,70 @@ body {
   top: 80px;
 }
 
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.full-screen-details {
+  width: 80vw;
+  max-width: 600px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.full-screen-details img {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.full-screen-details p {
+  margin: 10px 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .full-screen-details {
+    width: 90vw;
+  }
+
+  .card {
+    width: calc(100% - 20px);
+  }
+}
+
+
+.button-one button {
+  font-size: 35px;
+  position: fixed;
+  top: 20%; /* Adjust the top position as needed */
+  right: 2%; /* Adjust the right position as needed */
+}
+
+
+
+
+/*hello*/
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -247,7 +353,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); /* Blur effect */
 }
 
 .modal-content {
@@ -257,17 +363,19 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
+  /* Add other styling as needed */
 }
 
+
 .modal {
+  background: linear-gradient(to right, rgb(212, 228, 243), rgb(242, 243, 219));
+  max-width: 392px;
+  height: 300px;
+  padding: 100px;
+  border-radius: 10px;
   position: relative;
-  background-color: transparent;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: white;
-  z-index: 2;
+  z-index: 1;
+  margin-bottom: 10%;
 }
 
 .close {
@@ -276,6 +384,7 @@ body {
   right: 10px;
   cursor: pointer;
   padding: 10%;
+ 
 }
 
 .modal form {
@@ -291,6 +400,7 @@ body {
 .modal form input {
   padding: 8px;
   margin-bottom: 10px;
+  /* Add other styling as needed */
 }
 
 .add-handmade-button {
@@ -311,13 +421,58 @@ body {
 }
 
 .welc img {
-  width: 60%;
+  width :60%;
   height: 30%;
+  /* margin-top: 1%; */
   margin-bottom: 0.5%;
   margin-left: 20%;
 }
 
-/* HandWorkDetails component styles */
+/* Add these styles to your existing CSS file */
+
+.details-container form {
+  display: flex;
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.details-container form input#input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.details-container form button#bu, .details-container form button#bu1 {
+  background-color: #088da5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.details-container form button#bu:hover, .details-container form button#bu1:hover {
+  background-color: #0a9dc6;
+}
+
+#bu1{
+  background-color: #088da5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 50px;
+}
 
 .details-container {
   max-width: 800px;

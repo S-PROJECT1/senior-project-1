@@ -91,12 +91,12 @@ function App() {
   // Creating our own theme
   const theme = {
     background: '#fff',
-    headerBgColor: '#09605f',
+    headerBgColor: ' #088da5',
     headerFontSize: '20px',
     botBubbleColor: '#0F3789',
     headerFontColor: 'white',
     botFontColor: 'white',
-    userBubbleColor: '#09605f',
+    userBubbleColor: ' #088da5',
     userFontColor: 'white',
   };
 
