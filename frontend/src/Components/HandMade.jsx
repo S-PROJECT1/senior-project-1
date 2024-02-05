@@ -1,3 +1,4 @@
+// HandMade.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddHandMade from "./AddHandMade";
@@ -14,6 +15,7 @@ function MainView({ handmades, onShowDetails, onUpdateClick, onDeleteClick }) {
           <img src={handmade.img} alt="Handmade" />
           <div>
             <div className="card-title">{handmade.title}</div>
+            <div className="card-description">{handmade.description}</div>
             <button className="card-button" onClick={() => onShowDetails(handmade)}>
               See more details
             </button>
@@ -54,12 +56,12 @@ function HandMade() {
 
   const handleShowDetails = (handmade) => {
     setSelectedItem({ type: 'handmade', data: handmade });
-    setView('details');  
+    setView('details');  // Set the view to 'details'
   };
 
   const handleCloseModal = () => {
     setSelectedItem(null);
-    setView('main');  
+    setView('main');  // Reset the view to 'main'
   };
 
   const handleUpdateClick = (handmade) => {
@@ -87,18 +89,21 @@ function HandMade() {
 
   return (
     <div className="full-screen-container">
-      
+
+      <AddHandMade
+        onAddHandmade={handleAddHandmade}
+        onAddSuccess={() => setRefreshPage(true)}
+        view={view}
+      />
+
+
       {view === 'main' && (
-        <>
-        
-          <AddHandMade onAddHandmade={handleAddHandmade} onAddSuccess={() => setRefreshPage(true)} />
-          <MainView
-            handmades={handmades}
-            onShowDetails={handleShowDetails}
-            onUpdateClick={handleUpdateClick}
-            onDeleteClick={handleDeleteClick}
-          />
-        </>
+        <MainView
+          handmades={handmades}
+          onShowDetails={handleShowDetails}
+          onUpdateClick={handleUpdateClick}
+          onDeleteClick={handleDeleteClick}
+        />
       )}
 
       {view === 'details' && selectedItem && (
@@ -124,4 +129,3 @@ function HandMade() {
 }
 
 export default HandMade;
-
